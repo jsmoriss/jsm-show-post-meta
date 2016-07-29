@@ -23,7 +23,7 @@
 </ul>
 
 <blockquote>
-The original plugin code is from the <a href="https://wordpress.org/plugins/post-meta-inspector/">Post Meta Inspector"</a> plugin by Daniel Bachhuber and Automattic. Improvements include better CSS for display boundaries, unserializing array values, and arrays shown as preformatted text.
+The original code is from the <a href="https://wordpress.org/plugins/post-meta-inspector/">Post Meta Inspector</a> plugin by Daniel Bachhuber and Automattic. Improvements include better CSS for display boundaries, unserializing array values, and arrays shown as preformatted text.
 </blockquote>
 
 
