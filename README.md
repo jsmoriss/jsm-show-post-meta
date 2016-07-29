@@ -15,7 +15,7 @@
 
 <p>Show all post meta (aka custom fields) keys and their unserialized values in a metabox on the bottom of post editing pages.</p>
 
-<p>This plugin is useful in cases where:</p>
+<p><strong>This plugin is useful in cases where:</strong></p>
 
 <ul>
 <li>You're wondering what post meta your theme and/or plugins might be creating.</li>
