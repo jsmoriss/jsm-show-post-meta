@@ -8,14 +8,14 @@
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Show post meta in a metbox on post editing pages. 
  * Tested Up To: 4.6
- * Version: 1.0.0-1
+ * Version: 1.0.1-1
  *
- * Original code from the "Post Meta Inspector" plugin at:
- * https://wordpress.org/plugins/post-meta-inspector/
- * By: Daniel Bachhuber and Automattic
+ * The original code is from the Post Meta Inspector
+ * (https://wordpress.org/plugins/post-meta-inspector/) plugin by Daniel
+ * Bachhuber and Automattic. Improvements include better CSS for display
+ * boundaries, unserializing array values, and arrays shown as preformatted
+ * wrapped text.
  */
-
-define( 'POST_META_INSPECTOR_VERSION', '1.1.1' );
 
 class JSM_Show_Post_Meta {
 
@@ -51,6 +51,7 @@ class JSM_Show_Post_Meta {
 		<style>
 			div#jsm-spm.postbox table { 
 				width:100%;
+				max-width:100%;
 				text-align:left;
 			}
 			div#jsm-spm.postbox table td { 
@@ -61,6 +62,7 @@ class JSM_Show_Post_Meta {
 			div#jsm-spm.postbox table td pre { 
 				margin:0;
 				padding:0;
+				white-space:pre-wrap;
 			}
 		</style>
 		<table><thead><tr><th class="key-column">Key</th>
