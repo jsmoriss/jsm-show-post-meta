@@ -8,7 +8,7 @@
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
  * Tested Up To: 4.6
- * Version: 1.0.2-1
+ * Version: 1.0.3-1
  *
  * The original code is from the Post Meta Inspector
  * (https://wordpress.org/plugins/post-meta-inspector/) plugin by Daniel
@@ -35,23 +35,28 @@ class JSM_Show_Post_Meta {
 	}
 
 	private static function setup_actions() {
-		add_action( 'add_meta_boxes', array( self::$instance, 'action_add_meta_boxes' ), 10, 2 );
+		add_action( 'add_meta_boxes', array( self::$instance, 'add_meta_boxes' ), 10, 2 );
 	}
 
-	public function action_add_meta_boxes( $post_type, $post_obj ) {
+	public function add_meta_boxes( $post_type, $post_obj ) {
 		$this->view_cap = apply_filters( 'jsm_spm_view_cap', 'manage_options' );
 
-		if ( ! current_user_can( $this->view_cap ) || 
+		if ( ! current_user_can( $this->view_cap, $post_obj->ID ) || 
 			! apply_filters( 'jsm_spm_post_type', '__return_true', $post_type ) )
 				return;
 
-		add_meta_box( 'jsm-spm', 'Post Meta', array( self::$instance, 'show_post_meta' ), $post_type, 'normal', 'low' );
+		add_meta_box( 'jsm-spm', 'Post Meta', array( &$this, 'show_post_meta' ), $post_type, 'normal', 'low' );
 	}
 
 	public function show_post_meta( $post_obj ) {
 		if ( empty( $post_obj->ID ) )
 			return;
+
 		$post_meta = apply_filters( 'jsm_spm_post_meta', get_post_meta( $post_obj->ID ), $post_obj );
+		$skip_keys = apply_filters( 'jsm_spm_skip_keys', array(
+			'_encloseme',
+		) );
+
 		?>
 		<style>
 			div#jsm-spm.postbox table { 
@@ -73,9 +78,16 @@ class JSM_Show_Post_Meta {
 		<table><thead><tr><th class="key-column">Key</th>
 		<th class="value-column">Value</th></tr></thead><tbody>
 		<?php
+
+		ksort( $post_meta );
 		foreach( $post_meta as $key => $arr ) {
+			foreach ( $skip_keys as $dnsw )
+				if ( strpos( $key, $dnsw ) === 0 )
+					continue 2;
+
 			foreach ( $arr as $num => $el )
 				$arr[$num] = maybe_unserialize( $el );
+
 			echo '<tr><td class="key-column">'.esc_html( $key ).'</td>'.
 				'<td class="value-column"><pre>'.
 					esc_html( var_export( $arr, true ) ).'</pre></td></tr>';
