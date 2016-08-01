@@ -23,13 +23,13 @@
 
 <h4>Available Filters</h4>
 
-<p> <code>jsm_spm_view_cap ( 'manage_options' )</code> &mdash; The current user must have these capabilities to view the "Post Meta" metabox (default: 'manage_options' ).</p>
+<p><em>jsm_spm_view_cap ( 'manage_options' )</em> &mdash; The current user must have these capabilities to view the "Post Meta" metabox (default: 'manage_options' ).</p></p>
 
-<p> <code>jsm_spm_post_type ( true, $post_type )</code> &mdash; Add the "Post Meta" metabox to the editing pages for this post type.</p>
+<p><em>jsm_spm_post_type ( true, $post_type )</em> &mdash; Add the "Post Meta" metabox to the editing pages for this post type.</p></p>
 
-<p> <code>jsm_spm_post_meta ( $post_meta, $post_obj )</code> &mdash; The post meta array (unserialized) retrieved for display in the metabox.</p>
+<p><em>jsm_spm_post_meta ( $post_meta, $post_obj )</em> &mdash; The post meta array (unserialized) retrieved for display in the metabox.</p></p>
 
-<p> <code>jsm_spm_skip_keys ( $array )</code> &mdash; An array of key name prefixes to ignore (default: '_encloseme' ).</p>
+<p><em>jsm_spm_skip_keys ( $array )</em> &mdash; An array of key name prefixes to ignore (default: '_encloseme' ).</p></p>
 
 
 <h2>Installation</h2>

@@ -23,13 +23,13 @@ The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys 
 
 = Available Filters =
 
-<p> <code>jsm_spm_view_cap ( 'manage_options' )</code> &mdash; The current user must have these capabilities to view the "Post Meta" metabox (default: 'manage_options' ).</p>
+*jsm_spm_view_cap ( 'manage_options' )* &mdash; The current user must have these capabilities to view the "Post Meta" metabox (default: 'manage_options' ).</p>
 
-<p> <code>jsm_spm_post_type ( true, $post_type )</code> &mdash; Add the "Post Meta" metabox to the editing pages for this post type.</p>
+*jsm_spm_post_type ( true, $post_type )* &mdash; Add the "Post Meta" metabox to the editing pages for this post type.</p>
 
-<p> <code>jsm_spm_post_meta ( $post_meta, $post_obj )</code> &mdash; The post meta array (unserialized) retrieved for display in the metabox.</p>
+*jsm_spm_post_meta ( $post_meta, $post_obj )* &mdash; The post meta array (unserialized) retrieved for display in the metabox.</p>
 
-<p> <code>jsm_spm_skip_keys ( $array )</code> &mdash; An array of key name prefixes to ignore (default: '_encloseme' ).</p>
+*jsm_spm_skip_keys ( $array )* &mdash; An array of key name prefixes to ignore (default: '_encloseme' ).</p>
 
 == Installation ==
 
