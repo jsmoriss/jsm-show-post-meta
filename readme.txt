@@ -23,9 +23,10 @@ The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys 
 
 = Available Filters =
 
-* `jsm_spm_view_cap ( 'manage_options' )` &mdash; The current user must have these capabilities to view the "Post Meta" metabox (default is 'manage_options' ).
+* `jsm_spm_view_cap ( 'manage_options' )` &mdash; The current user must have these capabilities to view the "Post Meta" metabox (default: 'manage_options' ).
 * `jsm_spm_post_type ( true, $post_type )` &mdash; Add the "Post Meta" metabox to the editing pages for this post type.
-* `jsm_spm_post_meta ( $post_meta, $post_obj )` &mdash; The post meta array retrieved for display in the metabox.
+* `jsm_spm_post_meta ( $post_meta, $post_obj )` &mdash; The post meta array (unserialized) retrieved for display in the metabox.
+* `jsm_spm_skip_keys ( $array )` &mdash; An array of key name prefixes to ignore (default: '_encloseme' ).
 
 == Installation ==
 
@@ -76,20 +77,20 @@ The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys 
 
 = Changelog / Release Notes =
 
-**Version 1.0.2-1 (2016/07/30)**
+**Version 1.0.3-1 (2016/07/30)**
 
 * *New Features*
-	* Added the 'jsm_spm_post_meta' filter.
-* *Improvements*
 	* None
+* *Improvements*
+	* The post meta keys are now sorted. 
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* None
+	* Added the 'jsm_spm_skip_keys' filter.
 
 == Upgrade Notice ==
 
-= 1.0.2-1 =
+= 1.0.3-1 =
 
-(2016/08/01) Added the 'jsm_spm_post_meta' filter.
+(2016/08/01) Added the 'jsm_spm_skip_keys' filter.
 

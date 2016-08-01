@@ -24,9 +24,10 @@
 <h4>Available Filters</h4>
 
 <ul>
-<li><code>jsm_spm_view_cap ( 'manage_options' )</code> &mdash; The current user must have these capabilities to view the "Post Meta" metabox (default is 'manage_options' ).</li>
+<li><code>jsm_spm_view_cap ( 'manage_options' )</code> &mdash; The current user must have these capabilities to view the "Post Meta" metabox (default: 'manage_options' ).</li>
 <li><code>jsm_spm_post_type ( true, $post_type )</code> &mdash; Add the "Post Meta" metabox to the editing pages for this post type.</li>
-<li><code>jsm_spm_post_meta ( $post_meta, $post_obj )</code> &mdash; The post meta array retrieved for display in the metabox.</li>
+<li><code>jsm_spm_post_meta ( $post_meta, $post_obj )</code> &mdash; The post meta array (unserialized) retrieved for display in the metabox.</li>
+<li><code>jsm_spm_skip_keys ( $array )</code> &mdash; An array of key name prefixes to ignore (default: '_encloseme' ).</li>
 </ul>
 
 
