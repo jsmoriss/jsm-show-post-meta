@@ -74,10 +74,10 @@ The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys 
 
 = Changelog / Release Notes =
 
-**Version 1.0.1-1 (2016/07/30)**
+**Version 1.0.2-1 (2016/07/30)**
 
 * *New Features*
-	* Initial release.
+	* Added the 'jsm_spm_post_meta' filter.
 * *Improvements*
 	* None
 * *Bugfixes*
@@ -87,7 +87,7 @@ The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys 
 
 == Upgrade Notice ==
 
-= 1.0.1-1 =
+= 1.0.2-1 =
 
-(2016/07/20) Initial release.
+(2016/08/01) Added the 'jsm_spm_post_meta' filter.
 
