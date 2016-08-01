@@ -51,7 +51,8 @@ class JSM_Show_Post_Meta {
 	public function show_post_meta( $post_obj ) {
 		if ( empty( $post_obj->ID ) )
 			return;
-		$post_meta = apply_filters( 'jsm_spm_post_meta', get_post_meta( $post_obj->ID ), $post_obj ); ?>
+		$post_meta = apply_filters( 'jsm_spm_post_meta', get_post_meta( $post_obj->ID ), $post_obj );
+		?>
 		<style>
 			div#jsm-spm.postbox table { 
 				width:100%;
