@@ -38,7 +38,7 @@ class JSM_Show_Post_Meta {
 		add_action( 'add_meta_boxes', array( self::$instance, 'action_add_meta_boxes' ), 10, 2 );
 	}
 
-	public function action_add_meta_boxes( $post_type, $post ) {
+	public function action_add_meta_boxes( $post_type, $post_obj ) {
 		$this->view_cap = apply_filters( 'jsm_spm_view_cap', 'manage_options' );
 
 		if ( ! current_user_can( $this->view_cap ) || 
@@ -48,10 +48,10 @@ class JSM_Show_Post_Meta {
 		add_meta_box( 'jsm-spm', 'Post Meta', array( self::$instance, 'show_post_meta' ), $post_type, 'normal', 'low' );
 	}
 
-	public function show_post_meta( $post ) {
-		if ( empty( $post->ID ) )
+	public function show_post_meta( $post_obj ) {
+		if ( empty( $post_obj->ID ) )
 			return;
-		$post_meta = apply_filters( 'jsm_spm_post_meta', get_post_meta( $post->ID ) ); ?>
+		$post_meta = apply_filters( 'jsm_spm_post_meta', get_post_meta( $post_obj->ID ), $post_obj ); ?>
 		<style>
 			div#jsm-spm.postbox table { 
 				width:100%;
