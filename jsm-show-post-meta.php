@@ -6,7 +6,7 @@
  * Author URI: http://surniaulula.com/
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
- * Description: Show post meta in a metbox on post editing pages. 
+ * Description: Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
  * Tested Up To: 4.6
  * Version: 1.0.1-1
  *
