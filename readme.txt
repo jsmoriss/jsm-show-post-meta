@@ -9,18 +9,15 @@ Tested up to: 4.6
 Requires At Least: 3.1
 Stable tag: 1.0.1-1
 
-Show all post meta (aka custom fields) in a metabox on post editing pages. 
+Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
 
 == Description ==
 
-Show all post meta (aka custom fields) keys and their unserialized values in a metabox on the bottom of post editing pages.
+<strong>Wondering what post meta your theme and/or plugins might be creating?</strong>
 
-<strong>This plugin is useful in cases where:</strong>
+<strong>Need to find the name of a specific post meta key?</strong>
 
-<ul>
-<li>You're wondering what post meta your theme and/or plugins might be creating.</li>
-<li>You need to find the name of a specific post meta key.</li>
-</ul>
+The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox on the bottom of post editing pages.
 
 == Installation ==
 

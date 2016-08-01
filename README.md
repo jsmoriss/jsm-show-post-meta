@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Show Post Meta</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Show all post meta (aka custom fields) in a metabox on post editing pages.</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.0.1-1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 3.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.6</td></tr>
@@ -13,14 +13,11 @@
 
 <h2>Description</h2>
 
-<p>Show all post meta (aka custom fields) keys and their unserialized values in a metabox on the bottom of post editing pages.</p>
+<p><strong>Wondering what post meta your theme and/or plugins might be creating?</strong></p>
 
-<p><strong>This plugin is useful in cases where:</strong></p>
+<p><strong>Need to find the name of a specific post meta key?</strong></p>
 
-<ul>
-<li>You're wondering what post meta your theme and/or plugins might be creating.</li>
-<li>You need to find the name of a specific post meta key.</li>
-</ul>
+<p>The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox on the bottom of post editing pages.</p>
 
 
 <h2>Installation</h2>
