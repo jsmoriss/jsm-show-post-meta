@@ -13,7 +13,7 @@ Show all post meta (aka custom fields) keys and their unserialized values in a m
 
 == Description ==
 
-<strong>Wondering what post meta your theme and/or plugins might be creating?</strong>
+<strong>Wondering about the post meta your theme and/or plugins might be creating?</strong>
 
 <strong>Need to find the name of a specific post meta key?</strong>
 

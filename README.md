@@ -13,7 +13,7 @@
 
 <h2>Description</h2>
 
-<p><strong>Wondering what post meta your theme and/or plugins might be creating?</strong></p>
+<p><strong>Wondering about the post meta your theme and/or plugins might be creating?</strong></p>
 
 <p><strong>Need to find the name of a specific post meta key?</strong></p>
 
