@@ -19,6 +19,12 @@ Show all post meta (aka custom fields) keys and their unserialized values in a m
 
 The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox on the bottom of post editing pages.
 
+= Filters =
+
+* `jsm_spm_view_cap ( 'manage_options' )` &mdash; The current user must have these capabilities (default is 'manage_options' ).
+* `jsm_spm_post_type ( true, $post_type )` &mdash; Add the "Post Meta" metabox to the editing page for this post type.
+* `jsm_spm_post_meta ( $post_meta )` &mdash; The post meta retrieved for display in the metabox.
+
 == Installation ==
 
 = Automated Install =
