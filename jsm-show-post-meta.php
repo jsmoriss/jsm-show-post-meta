@@ -8,7 +8,7 @@
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
  * Tested Up To: 4.6
- * Version: 1.0.1-1
+ * Version: 1.0.2-1
  *
  * The original code is from the Post Meta Inspector
  * (https://wordpress.org/plugins/post-meta-inspector/) plugin by Daniel
@@ -35,19 +35,23 @@ class JSM_Show_Post_Meta {
 	}
 
 	private static function setup_actions() {
-		add_action( 'add_meta_boxes', array( self::$instance, 'action_add_meta_boxes' ) );
+		add_action( 'add_meta_boxes', array( self::$instance, 'action_add_meta_boxes' ), 10, 2 );
 	}
 
-	public function action_add_meta_boxes() {
+	public function action_add_meta_boxes( $post_type, $post ) {
 		$this->view_cap = apply_filters( 'jsm_spm_view_cap', 'manage_options' );
+
 		if ( ! current_user_can( $this->view_cap ) || 
-			! apply_filters( 'jsm_spm_post_type', '__return_true', get_post_type() ) )
+			! apply_filters( 'jsm_spm_post_type', '__return_true', $post_type ) )
 				return;
-		add_meta_box( 'jsm-spm', 'Post Meta', array( self::$instance, 'show_post_meta' ), get_post_type() );
+
+		add_meta_box( 'jsm-spm', 'Post Meta', array( self::$instance, 'show_post_meta' ), $post_type, 'normal', 'low' );
 	}
 
-	public function show_post_meta() {
-		$custom_fields = get_post_meta( get_the_ID() ); ?>
+	public function show_post_meta( $post ) {
+		if ( empty( $post->ID ) )
+			return;
+		$post_meta = apply_filters( 'jsm_spm_post_meta', get_post_meta( $post->ID ) ); ?>
 		<style>
 			div#jsm-spm.postbox table { 
 				width:100%;
@@ -68,7 +72,7 @@ class JSM_Show_Post_Meta {
 		<table><thead><tr><th class="key-column">Key</th>
 		<th class="value-column">Value</th></tr></thead><tbody>
 		<?php
-		foreach( $custom_fields as $key => $arr ) {
+		foreach( $post_meta as $key => $arr ) {
 			foreach ( $arr as $num => $el )
 				$arr[$num] = maybe_unserialize( $el );
 			echo '<tr><td class="key-column">'.esc_html( $key ).'</td>'.
