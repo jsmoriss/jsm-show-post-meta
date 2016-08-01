@@ -15,7 +15,9 @@
 
 <p><strong>Wondering about the post meta your theme and/or plugins might be creating?</strong></p>
 
-<p><strong>Need to find the name of a specific post meta key?</strong></p>
+<p><strong>Want to find the name of a specific post meta key?</strong></p>
+
+<p><strong>Need some help debugging your post meta?</strong></p>
 
 <p>The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox on the bottom of post editing pages.</p>
 
