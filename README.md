@@ -19,7 +19,7 @@
 
 <p>The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox on the bottom of post editing pages.</p>
 
-<h4>Filters</h4>
+<h4>Available Filters</h4>
 
 <ul>
 <li><code>jsm_spm_view_cap ( 'manage_options' )</code> &mdash; The current user must have these capabilities to view the "Post Meta" metabox (default is 'manage_options' ).</li>
