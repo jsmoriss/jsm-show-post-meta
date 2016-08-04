@@ -6,7 +6,7 @@ Tags: post meta, custom fields, tools
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
 Tested up to: 4.6
-Requires At Least: 3.1
+Requires At Least: 3.0
 Stable tag: 1.0.3-1
 
 Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
