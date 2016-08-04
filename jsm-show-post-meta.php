@@ -50,7 +50,7 @@ class JSM_Show_Post_Meta {
 		$this->view_cap = apply_filters( 'jsm_spm_view_cap', 'manage_options' );
 
 		if ( ! current_user_can( $this->view_cap, $post_obj->ID ) || 
-			! apply_filters( 'jsm_spm_post_type', '__return_true', $post_type ) )
+			! apply_filters( 'jsm_spm_post_type', true, $post_type ) )
 				return;
 
 		add_meta_box( 'jsm-spm', 'Post Meta', 
