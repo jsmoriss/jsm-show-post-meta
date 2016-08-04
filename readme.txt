@@ -2,7 +2,7 @@
 Plugin Name: JSM's Show Post Meta
 Plugin Slug: jsm-show-post-meta
 Contributors: jsmoriss
-Tags: post meta, custom fields, tools
+Tags: meta, post meta, custom fields, debug, tools
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
 Requires At Least: 3.0
