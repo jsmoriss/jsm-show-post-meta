@@ -5,8 +5,8 @@ Contributors: jsmoriss
 Tags: post meta, custom fields, tools
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
-Tested up to: 4.6
 Requires At Least: 3.0
+Tested up to: 4.6
 Stable tag: 1.0.3-1
 
 Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
@@ -19,7 +19,7 @@ Show all post meta (aka custom fields) keys and their unserialized values in a m
 
 <strong>Need some help debugging your post meta?</strong>
 
-The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox on the bottom of post editing pages.
+The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of post editing pages.
 
 = Available Filters =
 
@@ -80,20 +80,21 @@ The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys 
 
 = Changelog / Release Notes =
 
-**Version 1.0.3-1 (2016/07/30)**
+**Version 1.0.4-1 (2016/08/04)**
 
 * *New Features*
 	* None
 * *Improvements*
-	* The post meta keys are now sorted. 
+	* Added check for is_admin() before hooking actions and filters.
+	* Added 20% width in CSS for the key column.
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* Added the 'jsm_spm_skip_keys' filter.
+	* None
 
 == Upgrade Notice ==
 
-= 1.0.3-1 =
+= 1.0.4-1 =
 
-(2016/08/01) Added the 'jsm_spm_skip_keys' filter.
+(2016/08/04) Added check for is_admin() before hooking actions and filters. Added 20% width in CSS for the key column.
 
