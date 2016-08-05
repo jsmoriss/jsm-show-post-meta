@@ -31,6 +31,11 @@ The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys 
 
 *jsm_spm_skip_keys ( $array )* &mdash; An array of key name prefixes to ignore (default: '_encloseme' ).</p>
 
+= Related Plugins =
+
+* [JSM's Show Term Meta](https://wordpress.org/plugins/jsm-show-term-meta/) (requires WP v4.4 or better)
+* [JSM's Show User Meta](https://wordpress.org/plugins/jsm-show-user-meta/)
+
 == Installation ==
 
 = Automated Install =
