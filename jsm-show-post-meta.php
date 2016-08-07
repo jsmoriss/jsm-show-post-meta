@@ -1,7 +1,10 @@
 <?php
 /*
  * Plugin Name: JSM's Show Post Meta
- * Plugin URI: http://wordpress.org/extend/plugins/jsm-show-post-meta/
+ * Text Domain: jsm-show-post-meta
+ * Domain Path: /languages
+ * Plugin URI: http://surniaulula.com/extend/plugins/jsm-show-post-meta/
+ * Assets URI: https://jsmoriss.github.io/jsm-show-post-meta/assets/
  * Author: JS Morisset
  * Author URI: http://surniaulula.com/
  * License: GPLv3
@@ -24,9 +27,9 @@ class JSM_Show_Post_Meta {
 
 	public $view_cap;
 
-	public static function instance() {
+	public static function &get_instance() {
 		if ( ! isset( self::$instance ) ) {
-			self::$instance = new JSM_Show_Post_Meta;
+			self::$instance = new self;
 			self::setup_actions();
 		}
 		return self::$instance;
@@ -113,7 +116,7 @@ class JSM_Show_Post_Meta {
 }
 
 function jsm_show_post_meta() {
-	return JSM_Show_Post_Meta::instance();
+	return JSM_Show_Post_Meta::get_instance();
 }
 
 add_action( 'plugins_loaded', 'jsm_show_post_meta' );
