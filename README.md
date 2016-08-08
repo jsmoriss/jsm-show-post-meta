@@ -1,4 +1,4 @@
-<h1>JSM&#039;s Show Post Meta</h1>
+<h1>JSM&#039;s Show Post Meta on Post Editing Pages</h1>
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Show Post Meta</td></tr>
