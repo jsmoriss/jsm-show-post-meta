@@ -10,8 +10,8 @@ Assets URI: https://jsmoriss.github.io/jsm-show-post-meta/assets/
 Tags: meta, post meta, custom fields, debug, tools
 Contributors: jsmoriss
 Requires At Least: 3.7
-Tested up to: 4.6
-Stable tag: 1.0.4-1
+Tested Up To: 4.7
+Stable Tag: 1.0.4-1
 
 Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
 
