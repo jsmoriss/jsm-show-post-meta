@@ -3,10 +3,10 @@
  * Plugin Name: JSM's Show Post Meta
  * Text Domain: jsm-show-post-meta
  * Domain Path: /languages
- * Plugin URI: http://surniaulula.com/extend/plugins/jsm-show-post-meta/
+ * Plugin URI: https://surniaulula.com/extend/plugins/jsm-show-post-meta/
  * Assets URI: https://jsmoriss.github.io/jsm-show-post-meta/assets/
  * Author: JS Morisset
- * Author URI: http://surniaulula.com/
+ * Author URI: https://surniaulula.com/
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
@@ -39,7 +39,7 @@
  * PARTICULAR PURPOSE. See the GNU General Public License for more details at
  * http://www.gnu.org/licenses/.
  * 
- * Copyright 2016 Jean-Sebastien Morisset (http://surniaulula.com/)
+ * Copyright 2016 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
 class JSM_Show_Post_Meta {
