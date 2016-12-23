@@ -20,23 +20,15 @@
 
 <p><strong>Need some help debugging your post meta?</strong></p>
 
-<blockquote>
 <p>The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of post editing pages.</p>
+
+<blockquote>
+<p>There are no settings to update or adjust &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
-<h4>Plugin Settings</h4>
+<h4>Developers</h4>
 
-<p>There are no settings to update or adjust &mdash; simply install and activate the plugin to add a metabox on all post editing pages.</p>
-
-<h4>Developer Filters</h4>
-
-<p><em>'jsm_spm_view_cap' ( 'manage_options' )</em> &mdash; The current user must have these capabilities to view the "Post Meta" metabox (default: 'manage_options' ).</p></p>
-
-<p><em>'jsm_spm_post_type' ( true, $post_type )</em> &mdash; Add the "Post Meta" metabox to the editing pages for this post type.</p></p>
-
-<p><em>'jsm_spm_post_meta' ( $post_meta, $post_obj )</em> &mdash; The post meta array (unserialized) retrieved for display in the metabox.</p></p>
-
-<p><em>'jsm_spm_skip_keys' ( $array )</em> &mdash; An array of key name prefixes to ignore (default: '_encloseme' ).</p></p>
+<p>See the plugin <a href="https://wordpress.org/plugins/jsm-user-locale/other_notes/">Other Notes</a> page for available filters and examples.</p>
 
 <h4>Related Plugins</h4>
 
@@ -89,7 +81,13 @@
 <h3>Other Notes</h3>
 <h4>Additional Documentation</h4>
 
-<ul>
-<li>None</li>
-</ul>
+<p><strong>Developer Filters</strong></p>
+
+<p><em>'jsm_spm_view_cap' ( 'manage_options' )</em> &mdash; The current user must have these capabilities to view the "Post Meta" metabox (default: 'manage_options' ).</p></p>
+
+<p><em>'jsm_spm_post_type' ( true, $post_type )</em> &mdash; Add the "Post Meta" metabox to the editing pages for this post type.</p></p>
+
+<p><em>'jsm_spm_post_meta' ( $post_meta, $post_obj )</em> &mdash; The post meta array (unserialized) retrieved for display in the metabox.</p></p>
+
+<p><em>'jsm_spm_skip_keys' ( $array )</em> &mdash; An array of key name regular expressions to ignore (default: '/^_encloseme/' ).</p></p>
 
