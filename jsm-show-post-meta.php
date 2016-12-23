@@ -12,7 +12,7 @@
  * Description: Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
  * Requires At Least: 3.7
  * Tested Up To: 4.7
- * Version: 1.0.4-1
+ * Version: 1.0.5-dev1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -42,103 +42,100 @@
  * Copyright 2016 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
-class JSM_Show_Post_Meta {
+if ( ! defined( 'ABSPATH' ) ) 
+	die( 'These aren\'t the droids you\'re looking for...' );
 
-	private static $instance;
+if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 
-	public $view_cap;
+	class JSM_Show_Post_Meta {
 
-	public static function &get_instance() {
-		if ( ! isset( self::$instance ) ) {
-			self::$instance = new self;
-			self::setup_actions();
+		private static $instance;
+	
+		public $view_cap;
+	
+		public static function &get_instance() {
+			if ( ! isset( self::$instance ) )
+				self::$instance = new self;
+			return self::$instance;
 		}
-		return self::$instance;
-	}
-
-	private function __construct() {
-	}
-
-	private static function setup_actions() {
-		if ( ! is_admin() )
-			return;
-
-		add_action( 'add_meta_boxes', 
-			array( self::$instance, 'add_meta_boxes' ), 1000, 2 );
-	}
-
-	public function add_meta_boxes( $post_type, $post_obj ) {
-		if ( ! isset( $post_obj->ID ) )	// exclude links
-			return;
-
-		$this->view_cap = apply_filters( 'jsm_spm_view_cap', 'manage_options' );
-
-		if ( ! current_user_can( $this->view_cap, $post_obj->ID ) || 
-			! apply_filters( 'jsm_spm_post_type', true, $post_type ) )
+	
+		private function __construct() {
+			if ( is_admin() ) {
+				add_action( 'add_meta_boxes', 
+					array( &$this, 'add_meta_boxes' ), 1000, 2 );
+			}
+		}
+	
+		public function add_meta_boxes( $post_type, $post_obj ) {
+			if ( ! isset( $post_obj->ID ) )	// exclude links
 				return;
-
-		add_meta_box( 'jsm-spm', 'Post Meta', 
-			array( &$this, 'show_post_meta' ), $post_type, 'normal', 'low' );
-	}
-
-	public function show_post_meta( $post_obj ) {
-		if ( empty( $post_obj->ID ) )
-			return;
-
-		$post_meta = apply_filters( 'jsm_spm_post_meta', 
-			get_post_meta( $post_obj->ID ), $post_obj );	// since wp v1.5.0
-
-		$skip_keys = apply_filters( 'jsm_spm_skip_keys', 
-			array(
-				'_encloseme',
-			)
-		);
-
-		?>
-		<style>
-			div#jsm-spm.postbox table { 
-				width:100%;
-				max-width:100%;
-				text-align:left;
-			}
-			div#jsm-spm.postbox table td { 
-				padding:10px;
-				vertical-align:top;
-				border:1px dotted #ccc;
-			}
-			div#jsm-spm.postbox table td pre { 
-				margin:0;
-				padding:0;
-				white-space:pre-wrap;
-			}
-			div#jsm-spm.postbox table .key-column { 
-				width:20%;
-			}
-		</style>
-		<table><thead><tr><th class="key-column">Key</th>
-		<th class="value-column">Value</th></tr></thead><tbody>
-		<?php
-
-		ksort( $post_meta );
-		foreach( $post_meta as $key => $arr ) {
-			foreach ( $skip_keys as $dnsw )
-				if ( strpos( $key, $dnsw ) === 0 )
-					continue 2;
-
-			foreach ( $arr as $num => $el )
-				$arr[$num] = maybe_unserialize( $el );
-
-			echo '<tr><td class="key-column">'.esc_html( $key ).'</td>'.
-				'<td class="value-column"><pre>'.
-					esc_html( var_export( $arr, true ) ).'</pre></td></tr>';
+	
+			$this->view_cap = apply_filters( 'jsm_spm_view_cap', 'manage_options' );
+	
+			if ( ! current_user_can( $this->view_cap, $post_obj->ID ) || 
+				! apply_filters( 'jsm_spm_post_type', true, $post_type ) )
+					return;
+	
+			add_meta_box( 'jsm-spm', 'Post Meta', 
+				array( &$this, 'show_post_meta' ), $post_type, 'normal', 'low' );
 		}
-		echo '</tbody></table>';
+	
+		public function show_post_meta( $post_obj ) {
+			if ( empty( $post_obj->ID ) )
+				return;
+	
+			$post_meta = apply_filters( 'jsm_spm_post_meta', 
+				get_post_meta( $post_obj->ID ), $post_obj );	// since wp v1.5.0
+	
+			$skip_keys = apply_filters( 'jsm_spm_skip_keys', 
+				array(
+					'_encloseme',
+				)
+			);
+	
+			?>
+			<style>
+				div#jsm-spm.postbox table { 
+					width:100%;
+					max-width:100%;
+					text-align:left;
+				}
+				div#jsm-spm.postbox table td { 
+					padding:10px;
+					vertical-align:top;
+					border:1px dotted #ccc;
+				}
+				div#jsm-spm.postbox table td pre { 
+					margin:0;
+					padding:0;
+					white-space:pre-wrap;
+				}
+				div#jsm-spm.postbox table .key-column { 
+					width:20%;
+				}
+			</style>
+			<table><thead><tr><th class="key-column">Key</th>
+			<th class="value-column">Value</th></tr></thead><tbody>
+			<?php
+	
+			ksort( $post_meta );
+			foreach( $post_meta as $key => $arr ) {
+				foreach ( $skip_keys as $dnsw )
+					if ( strpos( $key, $dnsw ) === 0 )
+						continue 2;
+	
+				foreach ( $arr as $num => $el )
+					$arr[$num] = maybe_unserialize( $el );
+	
+				echo '<tr><td class="key-column">'.esc_html( $key ).'</td>'.
+					'<td class="value-column"><pre>'.
+						esc_html( var_export( $arr, true ) ).'</pre></td></tr>';
+			}
+			echo '</tbody></table>';
+		}
 	}
+
+	JSM_Show_Post_Meta::get_instance();
 }
 
-function jsm_show_post_meta() {
-	return JSM_Show_Post_Meta::get_instance();
-}
-
-add_action( 'plugins_loaded', 'jsm_show_post_meta' );
-
+?>
