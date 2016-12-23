@@ -50,6 +50,7 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 	class JSM_Show_Post_Meta {
 
 		private static $instance;
+		private static $wp_min_version = 3.7;
 	
 		public $view_cap;
 	
@@ -61,11 +62,31 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 	
 		private function __construct() {
 			if ( is_admin() ) {
-				add_action( 'add_meta_boxes', 
-					array( &$this, 'add_meta_boxes' ), 1000, 2 );
+				load_plugin_textdomain( 'jsm-show-post-meta', false, 'jsm-show-post-meta/languages/' );
+
+				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
+				add_action( 'add_meta_boxes', array( &$this, 'add_meta_boxes' ), 1000, 2 );
 			}
 		}
 	
+		public static function check_wp_version() {
+			global $wp_version;
+			if ( version_compare( $wp_version, self::$wp_min_version, '<' ) ) {
+				$plugin = plugin_basename( __FILE__ );
+				if ( is_plugin_active( $plugin ) ) {
+					require_once( ABSPATH.'wp-admin/includes/plugin.php' );	// just in case
+					$plugin_data = get_plugin_data( __FILE__, false );	// $markup = false
+					deactivate_plugins( $plugin );
+					wp_die( 
+						sprintf( __( '%1$s requires WordPress version %2$s or higher and has been deactivated.',
+							'jsm-show-post-meta' ), $plugin_data['Name'], self::$wp_min_version ).'<br/><br/>'.
+						sprintf( __( 'Please upgrade WordPress before trying to reactivate the %1$s plugin.',
+							'jsm-show-post-meta' ), $plugin_data['Name'] )
+					);
+				}
+			}
+		}
+
 		public function add_meta_boxes( $post_type, $post_obj ) {
 			if ( ! isset( $post_obj->ID ) )	// exclude links
 				return;
@@ -76,7 +97,7 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 				! apply_filters( 'jsm_spm_post_type', true, $post_type ) )
 					return;
 	
-			add_meta_box( 'jsm-spm', 'Post Meta', 
+			add_meta_box( 'jsm-spm', __( 'Post Meta', 'jsm-show-post-meta' ),
 				array( &$this, 'show_post_meta' ), $post_type, 'normal', 'low' );
 		}
 	
@@ -87,11 +108,7 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 			$post_meta = apply_filters( 'jsm_spm_post_meta', 
 				get_post_meta( $post_obj->ID ), $post_obj );	// since wp v1.5.0
 	
-			$skip_keys = apply_filters( 'jsm_spm_skip_keys', 
-				array(
-					'_encloseme',
-				)
-			);
+			$skip_keys = apply_filters( 'jsm_spm_skip_keys', array( '_encloseme' ) );
 	
 			?>
 			<style>
@@ -114,9 +131,10 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 					width:20%;
 				}
 			</style>
-			<table><thead><tr><th class="key-column">Key</th>
-			<th class="value-column">Value</th></tr></thead><tbody>
 			<?php
+
+			echo '<table><thead><tr><th class="key-column">'.__( 'Key', 'jsm-show-post-meta' ).'</th>';
+			echo '<th class="value-column">'.__( 'Value', 'jsm-show-post-meta' ).'</th></tr></thead><tbody>';
 	
 			ksort( $post_meta );
 			foreach( $post_meta as $key => $arr ) {

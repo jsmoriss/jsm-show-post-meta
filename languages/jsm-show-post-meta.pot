@@ -13,6 +13,27 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
+#: jsm-show-post-meta.php:81
+msgid ""
+"%1$s requires WordPress version %2$s or higher and has been deactivated."
+msgstr ""
+
+#: jsm-show-post-meta.php:83
+msgid "Please upgrade WordPress before trying to reactivate the %1$s plugin."
+msgstr ""
+
+#: jsm-show-post-meta.php:100
+msgid "Post Meta"
+msgstr ""
+
+#: jsm-show-post-meta.php:136
+msgid "Key"
+msgstr ""
+
+#: jsm-show-post-meta.php:137
+msgid "Value"
+msgstr ""
+
 #. Plugin Name of the plugin/theme
 msgid "JSM's Show Post Meta"
 msgstr ""
