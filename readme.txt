@@ -31,7 +31,7 @@ Show all post meta (aka custom fields) keys and their unserialized values in a m
 
 = Developers =
 
-See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-post-meta/other_notes/) page for available filters.
+See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-post-meta/other_notes/) page for information on available filters.
 
 = Related Plugins =
 
