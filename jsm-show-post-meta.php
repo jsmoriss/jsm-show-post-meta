@@ -108,7 +108,7 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 			$post_meta = apply_filters( 'jsm_spm_post_meta', 
 				get_post_meta( $post_obj->ID ), $post_obj );	// since wp v1.5.0
 	
-			$skip_keys = apply_filters( 'jsm_spm_skip_keys', array( '_encloseme' ) );
+			$skip_keys = apply_filters( 'jsm_spm_skip_keys', array( '/^_encloseme/' ) );
 	
 			?>
 			<style>
@@ -116,19 +116,22 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 					width:100%;
 					max-width:100%;
 					text-align:left;
+					table-layout:fixed;
+				}
+				div#jsm-spm.postbox table .key-column { 
+					width:30%;
 				}
 				div#jsm-spm.postbox table td { 
 					padding:10px;
 					vertical-align:top;
 					border:1px dotted #ccc;
 				}
-				div#jsm-spm.postbox table td pre { 
+				div#jsm-spm.postbox table td div {
+					overflow-x:auto;
+				}
+				div#jsm-spm.postbox table td div pre { 
 					margin:0;
 					padding:0;
-					white-space:pre-wrap;
-				}
-				div#jsm-spm.postbox table .key-column { 
-					width:20%;
 				}
 			</style>
 			<?php
@@ -137,17 +140,18 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 			echo '<th class="value-column">'.__( 'Value', 'jsm-show-post-meta' ).'</th></tr></thead><tbody>';
 	
 			ksort( $post_meta );
-			foreach( $post_meta as $key => $arr ) {
-				foreach ( $skip_keys as $dnsw )
-					if ( strpos( $key, $dnsw ) === 0 )
+			foreach( $post_meta as $meta_key => $arr ) {
+				foreach ( $skip_keys as $preg_dns )
+					if ( preg_match( $preg_dns, $meta_key ) )
 						continue 2;
 	
 				foreach ( $arr as $num => $el )
 					$arr[$num] = maybe_unserialize( $el );
 	
-				echo '<tr><td class="key-column">'.esc_html( $key ).'</td>'.
-					'<td class="value-column"><pre>'.
-						esc_html( var_export( $arr, true ) ).'</pre></td></tr>';
+				echo '<tr><td class="key-column"><div class="key-cell"><pre>'.
+					esc_html( $meta_key ).'</pre></div></td>';
+				echo '<td class="value-column"><div class="value-cell"><pre>'.
+					esc_html( var_export( $arr, true ) ).'</pre></div></td></tr>'."\n";
 			}
 			echo '</tbody></table>';
 		}

@@ -26,11 +26,11 @@ msgstr ""
 msgid "Post Meta"
 msgstr ""
 
-#: jsm-show-post-meta.php:136
+#: jsm-show-post-meta.php:139
 msgid "Key"
 msgstr ""
 
-#: jsm-show-post-meta.php:137
+#: jsm-show-post-meta.php:140
 msgid "Value"
 msgstr ""
 
