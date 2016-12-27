@@ -11,7 +11,7 @@ Tags: meta, post meta, custom fields, debug, tools
 Contributors: jsmoriss
 Requires At Least: 3.7
 Tested Up To: 4.7
-Stable Tag: 1.0.5-1
+Stable Tag: 1.0.6-1
 
 Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
 
@@ -106,6 +106,17 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
+**Version 1.0.6-1 (2016/12/28)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* Highlighted new post meta rows added by the 'jsm_spm_post_meta' filters.
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
 **Version 1.0.5-1 (2016/12/23)**
 
 * *New Features*
@@ -131,6 +142,10 @@ Note that the production stage level can be incremented on occasion for simple t
 	* None
 
 == Upgrade Notice ==
+
+= 1.0.6-1 =
+
+(2016/12/28) Highlighted new post meta rows added by the 'jsm_spm_post_meta' filters.
 
 = 1.0.5-1 =
 
