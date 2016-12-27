@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the JSM's Show Post Meta package.
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's Show Post Meta 1.0.5-1\n"
+"Project-Id-Version: JSM's Show Post Meta 1.0.6-1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-show-post-"
 "meta\n"
 "POT-Creation-Date: 2016-MO-DA HO:MI+ZONE\n"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "Post Meta"
 msgstr ""
 
-#: jsm-show-post-meta.php:139
+#: jsm-show-post-meta.php:141
 msgid "Key"
 msgstr ""
 
-#: jsm-show-post-meta.php:140
+#: jsm-show-post-meta.php:142
 msgid "Value"
 msgstr ""
 

@@ -12,7 +12,7 @@
  * Description: Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
  * Requires At Least: 3.7
  * Tested Up To: 4.7
- * Version: 1.0.5-1
+ * Version: 1.0.6-1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -105,9 +105,8 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 			if ( empty( $post_obj->ID ) )
 				return;
 	
-			$post_meta = apply_filters( 'jsm_spm_post_meta', 
-				get_post_meta( $post_obj->ID ), $post_obj );	// since wp v1.5.0
-	
+			$post_meta = get_post_meta( $post_obj->ID );	// since wp v1.5.0
+			$post_meta_filtered = apply_filters( 'jsm_spm_post_meta', $post_meta, $post_obj );
 			$skip_keys = apply_filters( 'jsm_spm_skip_keys', array( '/^_encloseme/' ) );
 	
 			?>
@@ -120,6 +119,9 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 				}
 				div#jsm-spm.postbox table .key-column { 
 					width:30%;
+				}
+				div#jsm-stm.postbox table tr.added-meta { 
+					background-color:#eee;
 				}
 				div#jsm-spm.postbox table td { 
 					padding:10px;
@@ -139,8 +141,8 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 			echo '<table><thead><tr><th class="key-column">'.__( 'Key', 'jsm-show-post-meta' ).'</th>';
 			echo '<th class="value-column">'.__( 'Value', 'jsm-show-post-meta' ).'</th></tr></thead><tbody>';
 	
-			ksort( $post_meta );
-			foreach( $post_meta as $meta_key => $arr ) {
+			ksort( $post_meta_filtered );
+			foreach( $post_meta_filtered as $meta_key => $arr ) {
 				foreach ( $skip_keys as $preg_dns )
 					if ( preg_match( $preg_dns, $meta_key ) )
 						continue 2;
@@ -148,7 +150,10 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 				foreach ( $arr as $num => $el )
 					$arr[$num] = maybe_unserialize( $el );
 	
-				echo '<tr><td class="key-column"><div class="key-cell"><pre>'.
+				$is_added = isset( $post_meta[$meta_key] ) ? false : true;
+
+				echo $is_added ? '<tr class="added-meta">' : '<tr>';
+				echo '<td class="key-column"><div class="key-cell"><pre>'.
 					esc_html( $meta_key ).'</pre></div></td>';
 				echo '<td class="value-column"><div class="value-cell"><pre>'.
 					esc_html( var_export( $arr, true ) ).'</pre></div></td></tr>'."\n";
