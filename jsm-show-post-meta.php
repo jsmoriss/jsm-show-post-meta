@@ -54,12 +54,6 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 	
 		public $view_cap;
 	
-		public static function &get_instance() {
-			if ( ! isset( self::$instance ) )
-				self::$instance = new self;
-			return self::$instance;
-		}
-	
 		private function __construct() {
 			if ( is_admin() ) {
 				load_plugin_textdomain( 'jsm-show-post-meta', false, 'jsm-show-post-meta/languages/' );
@@ -67,6 +61,12 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 				add_action( 'add_meta_boxes', array( &$this, 'add_meta_boxes' ), 1000, 2 );
 			}
+		}
+	
+		public static function &get_instance() {
+			if ( ! isset( self::$instance ) )
+				self::$instance = new self;
+			return self::$instance;
 		}
 	
 		public static function check_wp_version() {
