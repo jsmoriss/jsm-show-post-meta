@@ -56,8 +56,7 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 	
 		private function __construct() {
 			if ( is_admin() ) {
-				load_plugin_textdomain( 'jsm-show-post-meta', false, 'jsm-show-post-meta/languages/' );
-
+				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 				add_action( 'add_meta_boxes', array( &$this, 'add_meta_boxes' ), 1000, 2 );
 			}
@@ -69,6 +68,10 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 			return self::$instance;
 		}
 	
+		public static function load_textdomain() {
+			load_plugin_textdomain( 'jsm-show-post-meta', false, 'jsm-show-post-meta/languages/' );
+		}
+
 		public static function check_wp_version() {
 			global $wp_version;
 			if ( version_compare( $wp_version, self::$wp_min_version, '<' ) ) {
