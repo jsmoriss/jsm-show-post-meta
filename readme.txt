@@ -8,7 +8,7 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-show-post-meta/assets/
 Tags: meta, post meta, custom fields, debug, tools
 Contributors: jsmoriss
-Requires At Least: 3.8
+Requires At Least: 3.7
 Tested Up To: 4.7.3
 Stable Tag: 1.0.6-1
 
