@@ -11,7 +11,7 @@
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
  * Requires At Least: 3.7
- * Tested Up To: 4.8
+ * Tested Up To: 4.8.1
  * Version: 1.0.8
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
