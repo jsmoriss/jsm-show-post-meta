@@ -46,8 +46,9 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 		}
 	
 		public static function &get_instance() {
-			if ( ! isset( self::$instance ) )
+			if ( ! isset( self::$instance ) ) {
 				self::$instance = new self;
+			}
 			return self::$instance;
 		}
 	
@@ -62,7 +63,6 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 			if ( version_compare( $wp_version, $wp_min_version, '<' ) ) {
 				$plugin = plugin_basename( __FILE__ );
 				if ( is_plugin_active( $plugin ) ) {
-					self::load_textdomain();
 					if ( ! function_exists( 'deactivate_plugins' ) ) {
 						require_once trailingslashit( ABSPATH ).'wp-admin/includes/plugin.php';
 					}
