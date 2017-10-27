@@ -1,4 +1,4 @@
-=== JSM's Show Post Meta on Post Editing Pages ===
+=== JSM's Show Post Meta in a Metabox on Post Editing Pages ===
 Plugin Name: JSM's Show Post Meta
 Plugin Slug: jsm-show-post-meta
 Text Domain: jsm-show-post-meta
@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-show-post-meta/assets/
-Tags: meta, post meta, custom fields, debug, tools
+Tags: meta, post meta, inspector, custom fields, debug, tools
 Contributors: jsmoriss
 Requires At Least: 3.7
 Tested Up To: 4.8.2
