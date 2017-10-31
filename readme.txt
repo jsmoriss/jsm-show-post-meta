@@ -9,7 +9,7 @@ Assets URI: https://jsmoriss.github.io/jsm-show-post-meta/assets/
 Tags: meta, post meta, inspector, custom fields, debug, tools
 Contributors: jsmoriss
 Requires At Least: 3.7
-Tested Up To: 4.8.2
+Tested Up To: 4.8.3
 Requires PHP: 5.3
 Stable Tag: 1.0.8
 
