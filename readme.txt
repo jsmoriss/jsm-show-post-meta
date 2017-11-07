@@ -1,4 +1,4 @@
-=== JSM's Show Post Meta in a Metabox on Post Editing Pages ===
+=== JSM's Show Post Meta in a Metabox on Post Editing Pages (Great Plugin for Developers) ===
 Plugin Name: JSM's Show Post Meta
 Plugin Slug: jsm-show-post-meta
 Text Domain: jsm-show-post-meta
