@@ -12,7 +12,7 @@
  * Description: Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
  * Requires PHP: 5.4
  * Requires At Least: 3.8
- * Tested Up To: 4.9
+ * Tested Up To: 4.9.1
  * Version: 1.0.8
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
