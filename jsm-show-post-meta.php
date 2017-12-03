@@ -156,4 +156,3 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 	JSM_Show_Post_Meta::get_instance();
 }
 
-?>
