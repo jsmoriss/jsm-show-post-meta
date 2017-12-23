@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Plugin Name: JSM's Show Post Meta
  * Text Domain: jsm-show-post-meta
  * Domain Path: /languages
