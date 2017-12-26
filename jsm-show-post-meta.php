@@ -65,15 +65,15 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 				$plugin = plugin_basename( __FILE__ );
 				if ( is_plugin_active( $plugin ) ) {
 					if ( ! function_exists( 'deactivate_plugins' ) ) {
-						require_once trailingslashit( ABSPATH ).'wp-admin/includes/plugin.php';
+						require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
 					}
 					$plugin_data = get_plugin_data( __FILE__, false );	// $markup = false
 					deactivate_plugins( $plugin, true );	// $silent = true
 					wp_die( 
-						'<p>'.sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
-							'jsm-show-post-meta' ), $plugin_data['Name'], 'WordPress', $wp_min_version ).'</p>'.
-						'<p>'.sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
-							'jsm-show-post-meta' ), 'WordPress', $plugin_data['Name'] ).'</p>'
+						'<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
+							'jsm-show-post-meta' ), $plugin_data['Name'], 'WordPress', $wp_min_version ) . '</p>' . 
+						'<p>' . sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
+							'jsm-show-post-meta' ), 'WordPress', $plugin_data['Name'] ) . '</p>'
 					);
 				}
 			}
@@ -86,16 +86,18 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 			$this->view_cap = apply_filters( 'jsm_spm_view_cap', 'manage_options' );
 	
 			if ( ! current_user_can( $this->view_cap, $post_obj->ID ) || 
-				! apply_filters( 'jsm_spm_post_type', true, $post_type ) )
-					return;
+				! apply_filters( 'jsm_spm_post_type', true, $post_type ) ) {
+				return;
+			}
 	
 			add_meta_box( 'jsm-spm', __( 'Post Meta', 'jsm-show-post-meta' ),
 				array( &$this, 'show_post_meta' ), $post_type, 'normal', 'low' );
 		}
 	
 		public function show_post_meta( $post_obj ) {
-			if ( empty( $post_obj->ID ) )
+			if ( empty( $post_obj->ID ) ) {
 				return;
+			}
 	
 			$post_meta = get_post_meta( $post_obj->ID );	// since wp v1.5.0
 			$post_meta_filtered = apply_filters( 'jsm_spm_post_meta', $post_meta, $post_obj );
@@ -130,26 +132,30 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 			</style>
 			<?php
 
-			echo '<table><thead><tr><th class="key-column">'.__( 'Key', 'jsm-show-post-meta' ).'</th>';
-			echo '<th class="value-column">'.__( 'Value', 'jsm-show-post-meta' ).'</th></tr></thead><tbody>';
+			echo '<table><thead><tr><th class="key-column">' . __( 'Key', 'jsm-show-post-meta' ) . '</th>';
+			echo '<th class="value-column">' . __( 'Value', 'jsm-show-post-meta' ) . '</th></tr></thead><tbody>';
 	
 			ksort( $post_meta_filtered );
+
 			foreach( $post_meta_filtered as $meta_key => $arr ) {
-				foreach ( $skip_keys as $preg_dns )
-					if ( preg_match( $preg_dns, $meta_key ) )
+
+				foreach ( $skip_keys as $preg_dns ) {
+					if ( preg_match( $preg_dns, $meta_key ) ) {
 						continue 2;
+					}
+				}
 	
-				foreach ( $arr as $num => $el )
+				foreach ( $arr as $num => $el ) {
 					$arr[$num] = maybe_unserialize( $el );
+				}
 	
 				$is_added = isset( $post_meta[$meta_key] ) ? false : true;
 
 				echo $is_added ? '<tr class="added-meta">' : '<tr>';
-				echo '<td class="key-column"><div class="key-cell"><pre>'.
-					esc_html( $meta_key ).'</pre></div></td>';
-				echo '<td class="value-column"><div class="value-cell"><pre>'.
-					esc_html( var_export( $arr, true ) ).'</pre></div></td></tr>'."\n";
+				echo '<td class="key-column"><div class="key-cell"><pre>' . esc_html( $meta_key ) . '</pre></div></td>';
+				echo '<td class="value-column"><div class="value-cell"><pre>' . esc_html( var_export( $arr, true ) ) . '</pre></div></td></tr>' . "\n";
 			}
+
 			echo '</tbody></table>';
 		}
 	}
