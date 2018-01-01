@@ -89,7 +89,7 @@ See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-post-meta/ot
 <h3>Repositories</h3>
 
 * [GitHub](https://jsmoriss.github.io/jsm-show-post-meta/)
-* [WordPress.org](https://wordpress.org/plugins/jsm-show-post-meta/developers/)
+* [WordPress.org](https://plugins.trac.wordpress.org/browser/jsm-show-post-meta/)
 
 <h3>Version Numbering</h3>
 
