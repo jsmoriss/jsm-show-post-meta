@@ -79,8 +79,10 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 		}
 
 		public function add_meta_boxes( $post_type, $post_obj ) {
-			if ( ! isset( $post_obj->ID ) )	// exclude links
+
+			if ( ! isset( $post_obj->ID ) ) {	// exclude links
 				return;
+			}
 	
 			$this->view_cap = apply_filters( 'jsm_spm_view_cap', 'manage_options' );
 	
@@ -94,6 +96,7 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 		}
 	
 		public function show_post_meta( $post_obj ) {
+
 			if ( empty( $post_obj->ID ) ) {
 				return;
 			}
