@@ -1,4 +1,4 @@
-=== JSM's Show Post Meta in a Metabox on Post Editing Pages (Great Plugin for Developers) ===
+=== JSM's Show Post Meta ===
 Plugin Name: JSM's Show Post Meta
 Plugin Slug: jsm-show-post-meta
 Text Domain: jsm-show-post-meta
@@ -13,15 +13,15 @@ Requires At Least: 3.8
 Tested Up To: 4.9.4
 Stable Tag: 1.0.8
 
-Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
+Show all post meta in a metabox on post editing pages -- great plugin for developers or debugging issues with post meta (aka custom fields).
 
 == Description ==
 
-<strong>Wondering about the post meta your theme and/or plugins might be creating?</strong>
+Wondering about the post meta your theme and/or plugins might be creating?
 
-<strong>Want to find the name of a specific post meta key?</strong>
+Want to find the name of a specific post meta key?
 
-<strong>Need some help debugging your post meta?</strong>
+Need some help debugging your post meta?
 
 The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of post editing pages.
 
