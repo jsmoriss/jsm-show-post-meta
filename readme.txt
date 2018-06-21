@@ -86,12 +86,7 @@ See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-post-meta/ot
 
 == Changelog ==
 
-<h3 class="top">Repositories</h3>
-
-* [GitHub](https://jsmoriss.github.io/jsm-show-post-meta/)
-* [WordPress.org](https://plugins.trac.wordpress.org/browser/jsm-show-post-meta/)
-
-<h3>Version Numbering</h3>
+<h3 class="top">Version Numbering</h3>
 
 Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
@@ -99,6 +94,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * {minor} = New functionality was added or improved in a backwards-compatible manner.
 * {bugfix} = Backwards-compatible bug fixes or small improvements.
 * {stage}.{level} = Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
+
+<h3>Repositories</h3>
+
+* [GitHub](https://jsmoriss.github.io/jsm-show-post-meta/)
+* [WordPress.org](https://plugins.trac.wordpress.org/browser/jsm-show-post-meta/)
 
 <h3>Changelog / Release Notes</h3>
 
