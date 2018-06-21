@@ -62,13 +62,13 @@ See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-post-meta/ot
 
 == Frequently Asked Questions ==
 
-<h3>Frequently Asked Questions</h3>
+<h3 class="top">Frequently Asked Questions</h3>
 
 * None
 
 == Other Notes ==
 
-<h3>Additional Documentation</h3>
+<h3 class="top">Additional Documentation</h3>
 
 **Developer Filters**
 
@@ -86,7 +86,7 @@ See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-post-meta/ot
 
 == Changelog ==
 
-<h3>Repositories</h3>
+<h3 class="top">Repositories</h3>
 
 * [GitHub](https://jsmoriss.github.io/jsm-show-post-meta/)
 * [WordPress.org](https://plugins.trac.wordpress.org/browser/jsm-show-post-meta/)
