@@ -27,10 +27,6 @@ The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys 
 
 There are no plugin settings &mdash; simply install and activate the plugin.
 
-= Power-users / Developers =
-
-See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-post-meta/other_notes/) page for information on available filters.
-
 = Related Plugins =
 
 * [JSM's Show Term Meta](https://wordpress.org/plugins/jsm-show-term-meta/) (requires WordPress v4.4 or better)
@@ -61,24 +57,6 @@ See the plugin [Other Notes](https://wordpress.org/plugins/jsm-show-post-meta/ot
 1. Click the *Activate Plugin* link.
 
 == Frequently Asked Questions ==
-
-<h3 class="top">Frequently Asked Questions</h3>
-
-* None
-
-== Other Notes ==
-
-<h3 class="top">Additional Documentation</h3>
-
-**Developer Filters**
-
-*'jsm_spm_view_cap' ( 'manage_options' )* &mdash; The current user must have these capabilities to view the "Post Meta" metabox (default: 'manage_options' ).</p>
-
-*'jsm_spm_post_type' ( true, $post_type )* &mdash; Add the "Post Meta" metabox to the editing pages for this post type.</p>
-
-*'jsm_spm_post_meta' ( $post_meta, $post_obj )* &mdash; The post meta array (unserialized) retrieved for display in the metabox.</p>
-
-*'jsm_spm_skip_keys' ( $array )* &mdash; An array of key name regular expressions to ignore (default: '/^_encloseme/' ).</p>
 
 == Screenshots ==
 
