@@ -25,7 +25,7 @@ Need some help debugging your post meta?
 
 The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of post editing pages.
 
-There are no plugin settings &mdash; simply install and activate the plugin.
+There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 = Related Plugins =
 
