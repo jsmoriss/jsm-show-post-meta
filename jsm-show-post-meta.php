@@ -90,9 +90,19 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 			if ( ! current_user_can( $this->view_cap, $post_obj->ID ) || ! apply_filters( 'jsm_spm_post_type', true, $post_type ) ) {
 				return;
 			}
-	
-			add_meta_box( 'jsm-spm', __( 'Post Meta', 'jsm-show-post-meta' ),
-				array( $this, 'show_post_meta' ), $post_type, 'normal', 'low' );
+
+			$metabox_id      = 'jsm-spm';
+			$metabox_title   = __( 'Post Meta', 'jsm-show-post-meta' );
+			$metabox_screen  = $post_type;
+			$metabox_context = 'normal';
+			$metabox_prio    = 'low';
+			$callback_args   = array(	// The SECOND argument passed to the callback.
+				'__block_editor_compatible_meta_box' => true,
+			);
+
+			add_meta_box( $metabox_id, $metabox_title,
+				array( $this, 'show_post_meta' ), $metabox_screen,
+					$metabox_context, $metabox_prio, $callback_args );
 		}
 	
 		public function show_post_meta( $post_obj ) {
