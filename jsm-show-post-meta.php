@@ -111,9 +111,9 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 				return;
 			}
 	
-			$post_meta = get_post_meta( $post_obj->ID );	// since wp v1.5.0
+			$post_meta          = get_post_meta( $post_obj->ID );
 			$post_meta_filtered = apply_filters( 'jsm_spm_post_meta', $post_meta, $post_obj );
-			$skip_keys = apply_filters( 'jsm_spm_skip_keys', array( '/^_encloseme/' ) );
+			$skip_keys          = apply_filters( 'jsm_spm_skip_keys', array( '/^_encloseme/' ) );
 	
 			?>
 			<style>
