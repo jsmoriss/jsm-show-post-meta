@@ -56,6 +56,7 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 		}
 	
 		public static function load_textdomain() {
+
 			load_plugin_textdomain( 'jsm-show-post-meta', false, 'jsm-show-post-meta/languages/' );
 		}
 
