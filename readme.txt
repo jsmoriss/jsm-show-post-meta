@@ -29,7 +29,7 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 = Related Plugins =
 
-* [JSM's Show Term Meta](https://wordpress.org/plugins/jsm-show-term-meta/) (requires WordPress v4.4 or better)
+* [JSM's Show Term Meta](https://wordpress.org/plugins/jsm-show-term-meta/) (requires WordPress v4.4 or newer)
 * [JSM's Show User Meta](https://wordpress.org/plugins/jsm-show-user-meta/)
 
 == Installation ==
