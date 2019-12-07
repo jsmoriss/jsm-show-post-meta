@@ -41,7 +41,7 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 		private function __construct() {
 			if ( is_admin() ) {
 				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
-				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );	// Requires WP v3.9 or better.
+				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 				add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 1000, 2 );
 			}
 		}
