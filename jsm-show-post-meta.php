@@ -11,7 +11,7 @@
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
  * Requires PHP: 5.5
- * Requires At Least: 3.9
+ * Requires At Least: 4.0
  * Tested Up To: 5.3.2
  * Version: 1.0.8
  *
@@ -34,7 +34,7 @@ if ( ! class_exists( 'JSM_Show_Post_Meta' ) ) {
 	class JSM_Show_Post_Meta {
 
 		private static $instance;
-		private static $wp_min_version = '3.9';
+		private static $wp_min_version = '4.0';
 	
 		public $view_cap;
 	
