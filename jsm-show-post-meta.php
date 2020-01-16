@@ -110,11 +110,11 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 			);
 
 			add_meta_box( $metabox_id, $metabox_title,
-				array( $this, 'show_post_meta' ), $metabox_screen,
+				array( $this, 'show_post_metadata' ), $metabox_screen,
 					$metabox_context, $metabox_prio, $callback_args );
 		}
 	
-		public function show_post_meta( $post_obj ) {
+		public function show_post_metadata( $post_obj ) {
 
 			if ( empty( $post_obj->ID ) ) {
 				return;
