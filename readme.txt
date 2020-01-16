@@ -1,5 +1,5 @@
-=== JSM's Show Post Meta ===
-Plugin Name: JSM's Show Post Meta
+=== JSM's Show Post Metadata ===
+Plugin Name: JSM's Show Post Metadata
 Plugin Slug: jsm-show-post-meta
 Text Domain: jsm-show-post-meta
 Domain Path: /languages
@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.5
 Requires At Least: 4.0
 Tested Up To: 5.3.2
-Stable Tag: 1.0.8
+Stable Tag: 1.1.0
 
 Show all post meta in a metabox on post editing pages -- great plugin for developers or debugging issues with post meta (aka custom fields).
 
@@ -23,14 +23,14 @@ Want to find the name of a specific post meta key?
 
 Need some help debugging your post meta?
 
-The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of post editing pages.
+The JSM's Show Post Metadata plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of post editing pages.
 
 There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 = Related Plugins =
 
-* [JSM's Show Term Meta](https://wordpress.org/plugins/jsm-show-term-meta/) (requires WordPress v4.4 or newer)
-* [JSM's Show User Meta](https://wordpress.org/plugins/jsm-show-user-meta/)
+* [JSM's Show Term Metadata](https://wordpress.org/plugins/jsm-show-term-meta/) (requires WordPress v4.4 or newer)
+* [JSM's Show User Metadata](https://wordpress.org/plugins/jsm-show-user-meta/)
 
 == Installation ==
 
@@ -60,7 +60,7 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 == Screenshots ==
 
-01. The Post Meta metabox added to admin post editing pages.
+01. The Post Metadata metabox added to admin post editing pages.
 
 == Changelog ==
 
@@ -80,7 +80,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.0.8 (2017/04/08)**
+**Version 1.1.0 (2020/01/16)**
 
 * **New Features**
 	* None.
@@ -93,7 +93,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.0.8 =
+= 1.1.0 =
 
-(2017/04/08) Maintenance release.
+(2020/01/16) Maintenance release.
 

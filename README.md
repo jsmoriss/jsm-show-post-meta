@@ -1,9 +1,9 @@
-<h1>JSM&#039;s Show Post Meta</h1>
+<h1>JSM&#039;s Show Post Metadata</h1>
 
 <table>
-<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Show Post Meta</td></tr>
+<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Show Post Metadata</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Show all post meta in a metabox on post editing pages -- great plugin for developers or debugging issues with post meta (aka custom fields).</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.0.8</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.1.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>5.5 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>4.0 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>5.3.2</td></tr>
@@ -20,15 +20,15 @@
 
 <p>Need some help debugging your post meta?</p>
 
-<p>The JSM's Show Post Meta plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of post editing pages.</p>
+<p>The JSM's Show Post Metadata plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of post editing pages.</p>
 
 <p>There are no plugin settings &mdash; simply <em>install</em> and <em>activate</em> the plugin.</p>
 
 <h4>Related Plugins</h4>
 
 <ul>
-<li><a href="https://wordpress.org/plugins/jsm-show-term-meta/">JSM's Show Term Meta</a> (requires WordPress v4.4 or newer)</li>
-<li><a href="https://wordpress.org/plugins/jsm-show-user-meta/">JSM's Show User Meta</a></li>
+<li><a href="https://wordpress.org/plugins/jsm-show-term-meta/">JSM's Show Term Metadata</a> (requires WordPress v4.4 or newer)</li>
+<li><a href="https://wordpress.org/plugins/jsm-show-user-meta/">JSM's Show User Metadata</a></li>
 </ul>
 
 
