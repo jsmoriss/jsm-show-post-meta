@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the JSM's Show Post Meta package.
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's Show Post Meta 1.0.8\n"
+"Project-Id-Version: JSM's Show Post Meta 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-show-post-meta\n"
-"POT-Creation-Date: 2017-09-02 10:29-0400\n"
-"PO-Revision-Date: 2017-09-02 10:29-0400\n"
+"POT-Creation-Date: 2020-01-16 08:33-0800\n"
+"PO-Revision-Date: 2020-01-16 08:33-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -15,29 +15,29 @@ msgstr ""
 "X-Generator: Poedit 1.8.6\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: jsm-show-post-meta.php:72
+#: jsm-show-post-meta.php:82
 msgid "%1$s requires %2$s version %3$s or higher and has been deactivated."
 msgstr "%1$s nécessite %2$s version %3$s ou supérieure et a été désactivé."
 
-#: jsm-show-post-meta.php:74
+#: jsm-show-post-meta.php:84
 msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
 msgstr "Veuillez mettre à jour %1$s avant d'essayer de réactiver l'extension %2$s."
 
-#: jsm-show-post-meta.php:91
-msgid "Post Meta"
-msgstr "Méta d'article"
+#: jsm-show-post-meta.php:104
+msgid "Post Metadata"
+msgstr "Métadata d'article"
 
-#: jsm-show-post-meta.php:132
+#: jsm-show-post-meta.php:156
 msgid "Key"
 msgstr "Clé"
 
-#: jsm-show-post-meta.php:133
+#: jsm-show-post-meta.php:157
 msgid "Value"
 msgstr "Valeur"
 
 #. Plugin Name of the plugin/theme
-msgid "JSM's Show Post Meta"
-msgstr "JSM's Show Post Meta"
+msgid "JSM's Show Post Metadata"
+msgstr "JSM's Show Post Metadata"
 
 #. Plugin URI of the plugin/theme
 msgid "https://surniaulula.com/extend/plugins/jsm-show-post-meta/"
