@@ -48,7 +48,7 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 				 */
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 
-				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+				add_action( 'plugins_loaded', array( __CLASS__, 'init_textdomain' ) );
 
 				add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 1000, 2 );
 			}
@@ -93,15 +93,15 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 			}
 		}
 
-		public static function load_textdomain() {
+		public static function init_textdomain() {
 
-			static $do_once = null;
+			static $loaded = null;
 
-			if ( null !== $do_once ) {	// Already loaded.
+			if ( null !== $loaded ) {
 				return;
 			}
 
-			$do_once = true;
+			$loaded = true;
 
 			load_plugin_textdomain( 'jsm-show-post-meta', false, 'jsm-show-post-meta/languages/' );
 		}
