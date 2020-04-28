@@ -34,14 +34,22 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 	class JSM_Show_Post_Metadata {
 
 		private static $instance;
+
 		private static $wp_min_version = '4.0';
 	
 		public $view_cap;
 	
 		private function __construct() {
+
 			if ( is_admin() ) {
+
 				add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+
+				/**
+				 * Check for the minimum required WordPress version.
+				 */
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
+
 				add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 1000, 2 );
 			}
 		}
@@ -60,6 +68,9 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 			load_plugin_textdomain( 'jsm-show-post-meta', false, 'jsm-show-post-meta/languages/' );
 		}
 
+		/**
+		 * Check for the minimum required WordPress version.
+		 */
 		public static function check_wp_version() {
 
 			global $wp_version;
@@ -68,23 +79,18 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 
 				$plugin = plugin_basename( __FILE__ );
 
-				if ( is_plugin_active( $plugin ) ) {
-
-					if ( ! function_exists( 'deactivate_plugins' ) ) {
-						require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
-					}
-
-					$plugin_data = get_plugin_data( __FILE__, $markup = false );
-
-					deactivate_plugins( $plugin, $silent = true );
-
-					wp_die( 
-						'<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
-							'jsm-show-post-meta' ), $plugin_data['Name'], 'WordPress', self::$wp_min_version ) . '</p>' . 
-						'<p>' . sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
-							'jsm-show-post-meta' ), 'WordPress', $plugin_data['Name'] ) . '</p>'
-					);
+				if ( ! function_exists( 'deactivate_plugins' ) ) {
+					require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
 				}
+
+				$plugin_data = get_plugin_data( __FILE__, $markup = false );
+
+				deactivate_plugins( $plugin, $silent = true );
+
+				wp_die( '<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
+					'jsm-show-post-meta' ), $plugin_data['Name'], 'WordPress', self::$wp_min_version ) . ' ' . 
+						sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
+							'jsm-show-post-meta' ), 'WordPress', $plugin_data['Name'] ) . '</p>' );
 			}
 		}
 
