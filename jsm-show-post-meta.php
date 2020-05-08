@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.2
  * Tested Up To: 5.4.1
- * Version: 1.1.0
+ * Version: 1.2.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -57,6 +57,7 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 		public static function &get_instance() {
 
 			if ( null === self::$instance ) {
+
 				self::$instance = new self;
 			}
 
@@ -176,6 +177,7 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 			<?php
 
 			echo '<table><thead><tr><th class="key-column">' . __( 'Key', 'jsm-show-post-meta' ) . '</th>';
+
 			echo '<th class="value-column">' . __( 'Value', 'jsm-show-post-meta' ) . '</th></tr></thead><tbody>';
 	
 			ksort( $post_meta_filtered );
@@ -183,19 +185,24 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 			foreach( $post_meta_filtered as $meta_key => $arr ) {
 
 				foreach ( $skip_keys as $preg_dns ) {
+
 					if ( preg_match( $preg_dns, $meta_key ) ) {
+
 						continue 2;
 					}
 				}
 	
 				foreach ( $arr as $num => $el ) {
+
 					$arr[ $num ] = maybe_unserialize( $el );
 				}
 	
 				$is_added = isset( $post_meta[ $meta_key ] ) ? false : true;
 
 				echo $is_added ? '<tr class="added-meta">' : '<tr>';
+
 				echo '<td class="key-column"><div class="key-cell"><pre>' . esc_html( $meta_key ) . '</pre></div></td>';
+
 				echo '<td class="value-column"><div class="value-cell"><pre>' . esc_html( var_export( $arr, true ) ) . '</pre></div></td></tr>' . "\n";
 			}
 
