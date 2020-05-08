@@ -80,6 +80,7 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 				$plugin = plugin_basename( __FILE__ );
 
 				if ( ! function_exists( 'deactivate_plugins' ) ) {
+
 					require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
 				}
 
