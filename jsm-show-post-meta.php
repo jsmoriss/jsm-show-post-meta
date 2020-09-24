@@ -36,9 +36,9 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 		private static $instance = null;
 
 		private static $wp_min_version = '4.2';
-	
+
 		public $view_cap;
-	
+
 		private function __construct() {
 
 			if ( is_admin() ) {
@@ -53,7 +53,7 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 				add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 1000, 2 );
 			}
 		}
-	
+
 		public static function &get_instance() {
 
 			if ( null === self::$instance ) {
@@ -63,7 +63,7 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 
 			return self::$instance;
 		}
-	
+
 		/**
 		 * Check for the minimum required WordPress version.
 		 *
@@ -117,9 +117,9 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 			if ( ! isset( $post_obj->ID ) ) {	// exclude links
 				return;
 			}
-	
+
 			$this->view_cap = apply_filters( 'jsm_spm_view_cap', 'manage_options' );
-	
+
 			if ( ! current_user_can( $this->view_cap, $post_obj->ID ) || ! apply_filters( 'jsm_spm_post_type', true, $post_type ) ) {
 				return;
 			}
@@ -137,17 +137,17 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 				array( $this, 'show_post_metadata' ), $metabox_screen,
 					$metabox_context, $metabox_prio, $callback_args );
 		}
-	
+
 		public function show_post_metadata( $post_obj ) {
 
 			if ( empty( $post_obj->ID ) ) {
 				return;
 			}
-	
+
 			$post_meta          = get_post_meta( $post_obj->ID );
 			$post_meta_filtered = apply_filters( 'jsm_spm_post_meta', $post_meta, $post_obj );
 			$skip_keys          = apply_filters( 'jsm_spm_skip_keys', array( '/^_encloseme/' ) );
-	
+
 			?>
 			<style>
 				div#jsm-spm.postbox table { 
@@ -180,7 +180,7 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 			echo '<table><thead><tr><th class="key-column">' . __( 'Key', 'jsm-show-post-meta' ) . '</th>';
 
 			echo '<th class="value-column">' . __( 'Value', 'jsm-show-post-meta' ) . '</th></tr></thead><tbody>';
-	
+
 			ksort( $post_meta_filtered );
 
 			foreach( $post_meta_filtered as $meta_key => $arr ) {
@@ -192,12 +192,12 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 						continue 2;
 					}
 				}
-	
+
 				foreach ( $arr as $num => $el ) {
 
 					$arr[ $num ] = maybe_unserialize( $el );
 				}
-	
+
 				$is_added = isset( $post_meta[ $meta_key ] ) ? false : true;
 
 				echo $is_added ? '<tr class="added-meta">' : '<tr>';
