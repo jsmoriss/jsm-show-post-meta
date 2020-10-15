@@ -67,16 +67,7 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 
 		public function init_textdomain() {
 
-			static $local_cache = null;
-
-			if ( null === $local_cache ) {
-
-				$local_cache = 'jsm-show-post-meta';
-
-				load_plugin_textdomain( 'jsm-show-post-meta', false, 'jsm-show-post-meta/languages/' );
-			}
-
-			return $local_cache;
+			load_plugin_textdomain( 'jsm-show-post-meta', false, 'jsm-show-post-meta/languages/' );
 		}
 
 		/**
