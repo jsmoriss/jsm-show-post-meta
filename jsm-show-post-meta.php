@@ -38,7 +38,7 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 
 		private $wp_min_version = '4.4';
 
-		private static $instance = null;
+		private static $instance = null;	// JSM_Show_Post_Metadata class object.
 
 		private function __construct() {
 
