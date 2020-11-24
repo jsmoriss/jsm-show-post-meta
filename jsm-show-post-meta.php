@@ -92,11 +92,9 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 
 				$plugin_data = get_plugin_data( __FILE__, $markup = false );
 
-				$notice_version_transl = __( 'The %1$s plugin requires %2$s version %3$s or newer and has been deactivated.',
-					'jsm-show-post-meta' );
+				$notice_version_transl = __( 'The %1$s plugin requires %2$s version %3$s or newer and has been deactivated.', 'jsm-show-post-meta' );
 
-				$notice_upgrade_transl = __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
-					'jsm-show-post-meta' );
+				$notice_upgrade_transl = __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.', 'jsm-show-post-meta' );
 
 				deactivate_plugins( $plugin, $silent = true );
 
@@ -128,9 +126,7 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 				'__block_editor_compatible_meta_box' => true,
 			);
 
-			add_meta_box( $metabox_id, $metabox_title,
-				array( $this, 'show_post_metadata' ), $metabox_screen,
-					$metabox_context, $metabox_prio, $callback_args );
+			add_meta_box( $metabox_id, $metabox_title, array( $this, 'show_post_metadata' ), $metabox_screen, $metabox_context, $metabox_prio, $callback_args );
 		}
 
 		public function show_post_metadata( $post_obj ) {
