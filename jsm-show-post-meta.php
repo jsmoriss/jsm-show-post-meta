@@ -36,7 +36,7 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 
 		private $view_cap;
 
-		private $wp_min_version = '4.4';
+		private $wp_min_version = '4.5';
 
 		private static $instance = null;	// JSM_Show_Post_Metadata class object.
 
@@ -105,7 +105,7 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 
 		public function add_meta_boxes( $post_type, $post_obj ) {
 
-			if ( ! isset( $post_obj->ID ) ) {	// exclude links
+			if ( ! isset( $post_obj->ID ) ) {	// Exclude links.
 
 				return;
 			}
@@ -136,9 +136,9 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 				return;
 			}
 
-			$post_meta          = get_post_meta( $post_obj->ID );
-			$post_meta_filtered = apply_filters( 'jsm_spm_post_meta', $post_meta, $post_obj );
-			$skip_keys          = apply_filters( 'jsm_spm_skip_keys', array( '/^_encloseme/' ) );
+			$post_meta            = get_post_meta( $post_obj->ID );
+			$post_meta_filtered   = apply_filters( 'jsm_spm_post_meta', $post_meta, $post_obj );
+			$skip_keys_preg_match = apply_filters( 'jsm_spm_skip_keys', array( '/^_encloseme/' ) );
 
 			?>
 			<style>
@@ -177,9 +177,9 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 
 			foreach( $post_meta_filtered as $meta_key => $arr ) {
 
-				foreach ( $skip_keys as $preg_dns ) {
+				foreach ( $skip_keys_preg_match as $preg_exp ) {
 
-					if ( preg_match( $preg_dns, $meta_key ) ) {
+					if ( preg_match( $preg_exp, $meta_key ) ) {
 
 						continue 2;
 					}
