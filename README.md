@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Show Post Metadata</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Show all post meta in a metabox on post editing pages -- great plugin for developers or debugging issues with post meta (aka custom fields).</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Show all post meta (aka custom fields) in a metabox on post editing pages -- a great tool for debugging issues with post meta.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.3.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.0 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>4.5 or newer</td></tr>
@@ -18,7 +18,7 @@
 
 <p>Want to find the name of a specific post meta key?</p>
 
-<p>Need some help debugging your post meta?</p>
+<p>Need some help debugging your post meta (aka custom fields)?</p>
 
 <p>The JSM's Show Post Metadata plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of post editing pages.</p>
 
@@ -27,6 +27,7 @@
 <h4>Related Plugins</h4>
 
 <ul>
+<li><a href="https://wordpress.org/plugins/jsm-show-comment-meta/">JSM's Show Comment Metadata</a></li>
 <li><a href="https://wordpress.org/plugins/jsm-show-term-meta/">JSM's Show Term Metadata</a></li>
 <li><a href="https://wordpress.org/plugins/jsm-show-user-meta/">JSM's Show User Metadata</a></li>
 </ul>
