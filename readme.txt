@@ -13,7 +13,7 @@ Requires At Least: 4.5
 Tested Up To: 5.6
 Stable Tag: 1.3.0
 
-Show all post meta in a metabox on post editing pages -- great plugin for developers or debugging issues with post meta (aka custom fields).
+Show all post meta (aka custom fields) in a metabox on post editing pages -- a great tool for debugging issues with post meta.
 
 == Description ==
 
@@ -21,7 +21,7 @@ Wondering about the post meta your theme and/or plugins might be creating?
 
 Want to find the name of a specific post meta key?
 
-Need some help debugging your post meta?
+Need some help debugging your post meta (aka custom fields)?
 
 The JSM's Show Post Metadata plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of post editing pages.
 
@@ -29,6 +29,7 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 = Related Plugins =
 
+* [JSM's Show Comment Metadata](https://wordpress.org/plugins/jsm-show-comment-meta/)
 * [JSM's Show Term Metadata](https://wordpress.org/plugins/jsm-show-term-meta/)
 * [JSM's Show User Metadata](https://wordpress.org/plugins/jsm-show-user-meta/)
 
@@ -60,7 +61,7 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 == Screenshots ==
 
-01. The Post Metadata metabox added to admin post editing pages.
+01. The "Post Metadata" metabox added to admin post editing pages.
 
 == Changelog ==
 
