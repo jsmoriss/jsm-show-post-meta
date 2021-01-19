@@ -14,11 +14,11 @@
 
 <h2>Description</h2>
 
-<p>Wondering about the post meta your theme and/or plugins might be creating?</p>
+<p><strong>Wondering about the post meta your theme and/or plugins might be creating?</strong></p>
 
-<p>Want to find the name of a specific post meta key?</p>
+<p><strong>Want to find the name of a specific post meta key?</strong></p>
 
-<p>Need some help debugging your post meta (aka custom fields)?</p>
+<p><strong>Need some help debugging your post meta (aka custom fields)?</strong></p>
 
 <p>The JSM's Show Post Metadata plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of post editing pages.</p>
 
