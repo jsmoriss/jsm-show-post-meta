@@ -30,7 +30,7 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 = Related Plugins =
 
 * [JSM's Show Comment Metadata](https://wordpress.org/plugins/jsm-show-comment-meta/)
-* [JSM's Show Term Metadata](https://wordpress.org/plugins/jsm-show-term-meta/)
+* [JSM's Show Term Metadata](https://wordpress.org/plugins/jsm-show-term-meta/) (ie. Categories and Tags)
 * [JSM's Show User Metadata](https://wordpress.org/plugins/jsm-show-user-meta/)
 
 == Installation ==
