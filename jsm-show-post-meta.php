@@ -141,7 +141,7 @@ if ( ! class_exists( 'JSM_Show_Post_Metadata' ) ) {
 			$skip_keys_preg_match = apply_filters( 'jsm_spm_skip_keys', array( '/^_encloseme/' ) );
 
 			?>
-			<style>
+			<style type="text/css">
 				div#jsm-spm.postbox table {
 					width:100%;
 					max-width:100%;
