@@ -22,7 +22,7 @@
 
 <p>The JSM's Show Post Metadata plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of post editing pages.</p>
 
-<p>There are no plugin settings &mdash; simply <em>install</em> and <em>activate</em> the plugin.</p>
+<p>There are no plugin settings - simply <em>install</em> and <em>activate</em> the plugin.</p>
 
 <h4>Related Plugins</h4>
 
