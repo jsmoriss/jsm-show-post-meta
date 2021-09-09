@@ -10,7 +10,7 @@ Tags: meta, post meta, inspector, custom fields, debug, tools
 Contributors: jsmoriss
 Requires PHP: 7.0
 Requires At Least: 5.0
-Tested Up To: 5.8
+Tested Up To: 5.8.1
 Stable Tag: 1.3.0
 
 Show all post meta (aka custom fields) in a metabox on post editing pages -- a great tool for debugging issues with post meta.
