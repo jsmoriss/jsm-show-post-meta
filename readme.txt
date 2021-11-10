@@ -13,7 +13,7 @@ Requires At Least: 5.0
 Tested Up To: 5.8.2
 Stable Tag: 1.3.0
 
-Show all post meta (aka custom fields) in a metabox on post editing pages -- a great tool for debugging issues with post meta.
+Show all post meta (aka custom fields) in a metabox on post editing pages &mdash; a great tool for debugging issues with post meta.
 
 == Description ==
 
