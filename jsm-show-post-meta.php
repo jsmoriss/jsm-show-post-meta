@@ -34,9 +34,6 @@ if ( ! class_exists( 'JsmShowPostMeta' ) ) {
 
 	class JsmShowPostMeta {
 
-		public $post   = null;
-		public $script = null;
-
 		private static $instance = null;	// JsmShowPostMeta class object.
 
 		private function __construct() {
@@ -54,9 +51,9 @@ if ( ! class_exists( 'JsmShowPostMeta' ) ) {
 
 			JsmShowPostMetaConfig::require_libs( __FILE__ );
 
-			add_action( 'init', array( $this, 'set_objects' ) );
+			add_action( 'init', array( $this, 'init_textdomain' ) );
 
-			add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
+			add_action( 'init', array( $this, 'init_objects' ) );
 		}
 
 		public static function &get_instance() {
@@ -69,15 +66,15 @@ if ( ! class_exists( 'JsmShowPostMeta' ) ) {
 			return self::$instance;
 		}
 
-		public function set_objects() {
-
-			$this->post   = new JsmShowPostMetaPost();
-			$this->script = new JsmShowPostMetaScript();
-		}
-
 		public function init_textdomain() {
 
 			load_plugin_textdomain( 'jsm-show-post-meta', false, 'jsm-show-post-meta/languages/' );
+		}
+
+		public function init_objects() {
+
+			new JsmShowPostMetaPost();
+			new JsmShowPostMetaScript();
 		}
 	}
 

@@ -33,13 +33,13 @@ if ( ! class_exists( 'JsmShowPostMetaPost' ) ) {
 				return;
 			}
 
-			$view_cap = apply_filters( 'jsm_spm_view_cap', 'manage_options' );
+			$view_cap = apply_filters( 'jsmspm_view_cap', 'manage_options' );
 
 			if ( ! current_user_can( $view_cap, $post_obj->ID ) ) {
 			
 				return;
 
-			} elseif ( ! apply_filters( 'jsm_spm_post_type', true, $post_type ) ) {
+			} elseif ( ! apply_filters( 'jsmspm_post_type', true, $post_type ) ) {
 
 				return;
 			}
@@ -111,8 +111,8 @@ if ( ! class_exists( 'JsmShowPostMetaPost' ) ) {
 			}
 
 			$post_meta_orig     = get_post_meta( $post_obj->ID );
-			$post_meta_filtered = apply_filters( 'jsm_spm_post_meta', $post_meta_orig, $post_obj );
-			$skip_keys_preg     = apply_filters( 'jsm_spm_skip_keys', array( '/^_encloseme/' ) );
+			$post_meta_filtered = apply_filters( 'jsmspm_post_meta', $post_meta_orig, $post_obj );
+			$skip_keys_preg     = apply_filters( 'jsmspm_skip_keys', array( '/^_encloseme/' ) );
 			$metabox_html       = $this->get_metabox_css();
 			$metabox_html       .= '<table><thead><tr><th class="key-column">' . __( 'Key', 'jsm-show-post-meta' ) . '</th>';
 			$metabox_html       .= '<th class="value-column">' . __( 'Value', 'jsm-show-post-meta' ) . '</th></tr></thead><tbody>';
@@ -163,32 +163,42 @@ if ( ! class_exists( 'JsmShowPostMetaPost' ) ) {
 
 		public function get_metabox_css() {
 
-			return '<style type="text/css">
+			$custom_style_css = '
+
 				div#jsmspm.postbox table {
 					width:100%;
 					max-width:100%;
 					text-align:left;
 					table-layout:fixed;
 				}
+
 				div#jsmspm.postbox table .key-column {
 					width:30%;
 				}
+
 				div#jsmspm.postbox table tr.added-meta {
 					background-color:#eee;
 				}
+
 				div#jsmspm.postbox table td {
 					padding:10px;
 					vertical-align:top;
 					border:1px dotted #ccc;
 				}
+
 				div#jsmspm.postbox table td div {
 					overflow-x:auto;
 				}
+
 				div#jsmspm.postbox table td div pre {
 					margin:0;
 					padding:0;
 				}
-			</style>';
+			';
+
+			$custom_style_css = SucomUtil::minify_css( $custom_style_css, $filter_prefix = 'jsmspm' );
+
+			return '<style type="text/css">' . $custom_style_css . '</style>';
 		}
 	}
 }

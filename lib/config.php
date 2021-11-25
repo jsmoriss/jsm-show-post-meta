@@ -75,6 +75,31 @@ if ( ! class_exists( 'JsmShowPostMetaConfig' ) ) {
 			require_once JSMSPM_PLUGINDIR . 'lib/com/util-wp.php';
 			require_once JSMSPM_PLUGINDIR . 'lib/post.php';
 			require_once JSMSPM_PLUGINDIR . 'lib/script.php';
+
+			add_filter( 'jsmspm_load_lib', array( __CLASS__, 'load_lib' ), 10, 3 );
+		}
+
+		public static function load_lib( $success = false, $filespec = '', $classname = '' ) {
+
+			if ( false === $success && ! empty( $filespec ) ) {
+
+				$file_path = JSMSPM_PLUGINDIR . 'lib/' . $filespec . '.php';
+
+				if ( file_exists( $file_path ) ) {
+
+					require_once $file_path;
+
+					if ( empty( $classname ) ) {
+
+						return SucomUtil::sanitize_classname( 'jsmshowpostmeta' . $filespec, $allow_underscore = false );
+
+					}
+
+					return $classname;
+				}
+			}
+
+			return $success;
 		}
 	}
 }

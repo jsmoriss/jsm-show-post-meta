@@ -1,20 +1,21 @@
 
 var isSavingMetaBoxes = wp.data.select( 'core/edit-post' ).isSavingMetaBoxes;
-var jsmspmWasSaving   = false;
+var jsmspmWasSavingMb = false;
 
 wp.data.subscribe( function(){
 
-	var pluginId       = 'jsmspm';
-	var adminPageL10n  = 'jsmspmAdminPageL10n';
-	var jsmspmIsSaving = isSavingMetaBoxes();
+	var jsmspmIsSavingMb = isSavingMetaBoxes();
 
-	if ( jsmspmWasSaving ) {	// Last check was saving post meta.
+	if ( jsmspmWasSavingMb ) {	// Last check was saving post meta.
 
-		if ( ! jsmspmIsSaving ) {	// Saving the post meta is done.
+		if ( ! jsmspmIsSavingMb ) {	// Saving the post meta is done.
+
+			var pluginId      = 'jsmspm';
+			var adminPageL10n = 'jsmspmAdminPageL10n';
 
 			sucomBlockPostbox( pluginId, adminPageL10n );
 		}
 	}
 
-	jsmspmWasSaving = jsmspmIsSaving;
+	jsmspmWasSavingMb = jsmspmIsSavingMb;
 });
