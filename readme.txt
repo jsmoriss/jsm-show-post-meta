@@ -81,7 +81,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.0.0-dev.1 (TBD)**
+**Version 2.0.0-dev.2 (TBD)**
 
 * **New Features**
 	* None.
@@ -113,7 +113,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 2.0.0 =
+= 2.0.0-dev.2 =
 
 (TBD) None.
 
