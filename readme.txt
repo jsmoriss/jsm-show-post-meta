@@ -81,7 +81,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.0.0-b.1 (TBD)**
+**Version 2.0.0-rc.1 (2021/11/26)**
 
 * **New Features**
 	* When a post / page is saved in the WordPress block editor, the Post Metadata metabox is now refreshed.
@@ -113,9 +113,9 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 2.0.0-b.1 =
+= 2.0.0-rc.1 =
 
-(TBD) When a post / page is saved in the WordPress block editor, the Post Metadata metabox is now refreshed.
+(2021/11/26) When a post / page is saved in the WordPress block editor, the Post Metadata metabox is now refreshed.
 
 = 1.3.0 =
 
