@@ -13,15 +13,15 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: lib/post.php:48
+#: lib/post.php:47
 msgid "Post Metadata"
 msgstr ""
 
-#: lib/post.php:117
+#: lib/post.php:73
 msgid "Key"
 msgstr ""
 
-#: lib/post.php:118
+#: lib/post.php:74
 msgid "Value"
 msgstr ""
 

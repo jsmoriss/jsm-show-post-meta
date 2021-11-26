@@ -15,9 +15,9 @@ if ( ! defined( 'JSMSPM_PLUGINDIR' ) ) {
 	die( 'Do. Or do not. There is no try.' );
 }
 
-if ( ! class_exists( 'JsmShowPostMetaScript' ) ) {
+if ( ! class_exists( 'JsmSpmScript' ) ) {
 
-	class JsmShowPostMetaScript {
+	class JsmSpmScript {
 
 		public function __construct() {
 
@@ -66,12 +66,12 @@ if ( ! class_exists( 'JsmShowPostMetaScript' ) ) {
 
 		public function admin_register_page_scripts( $hook_name ) {
 
-			$cf = JsmShowPostMetaConfig::get_config();
+			$cf = JsmSpmConfig::get_config();
 
 			$admin_l10n = $cf[ 'plugin' ][ 'jsmspm' ][ 'admin_l10n' ];
 
 			wp_register_script( 'sucom-admin-page', JSMSPM_URLPATH . 'js/com/jquery-admin-page.min.js',
-				$deps = array( 'jquery' ), '20211125', $in_footer = true );
+				$deps = array( 'jquery' ), '20211126', $in_footer = true );
 
 			wp_localize_script( 'sucom-admin-page', $admin_l10n, $this->get_admin_page_script_data() );
 		}

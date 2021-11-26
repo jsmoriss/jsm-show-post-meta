@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'JsmShowPostMetaConfig' ) ) {
+if ( ! class_exists( 'JsmSpmConfig' ) ) {
 
-	class JsmShowPostMetaConfig {
+	class JsmSpmConfig {
 
 		public static $cf = array(
 			'plugin' => array(
@@ -72,6 +72,7 @@ if ( ! class_exists( 'JsmShowPostMetaConfig' ) ) {
 		public static function require_libs( $plugin_file ) {
 
 			require_once JSMSPM_PLUGINDIR . 'lib/com/util.php';
+			require_once JSMSPM_PLUGINDIR . 'lib/com/util-metabox.php';
 			require_once JSMSPM_PLUGINDIR . 'lib/com/util-wp.php';
 			require_once JSMSPM_PLUGINDIR . 'lib/post.php';
 			require_once JSMSPM_PLUGINDIR . 'lib/script.php';
@@ -81,7 +82,20 @@ if ( ! class_exists( 'JsmShowPostMetaConfig' ) ) {
 
 		public static function load_lib( $success = false, $filespec = '', $classname = '' ) {
 
-			if ( false === $success && ! empty( $filespec ) ) {
+			if ( false !== $success ) {
+
+				return $success;
+			}
+
+			if ( ! empty( $classname ) ) {
+
+				if ( class_exists( $classname ) ) {
+
+					return $classname;
+				}
+			}
+
+			if ( ! empty( $filespec ) ) {
 
 				$file_path = JSMSPM_PLUGINDIR . 'lib/' . $filespec . '.php';
 
@@ -91,8 +105,7 @@ if ( ! class_exists( 'JsmShowPostMetaConfig' ) ) {
 
 					if ( empty( $classname ) ) {
 
-						return SucomUtil::sanitize_classname( 'jsmshowpostmeta' . $filespec, $allow_underscore = false );
-
+						return SucomUtil::sanitize_classname( 'jsmspm' . $filespec, $allow_underscore = false );
 					}
 
 					return $classname;

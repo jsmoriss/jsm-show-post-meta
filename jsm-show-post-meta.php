@@ -30,29 +30,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'JsmShowPostMeta' ) ) {
+if ( ! class_exists( 'JsmSpm' ) ) {
 
-	class JsmShowPostMeta {
+	class JsmSpm {
 
-		private static $instance = null;	// JsmShowPostMeta class object.
+		private static $instance = null;	// JsmSpm class object.
 
-		private function __construct() {
+		public function __construct() {
 
-			if ( ! is_admin() ) {
-
-				return;
-			}
+			if ( ! is_admin() ) return;	// This is an admin-only plugin.
 
 			$plugin_dir = trailingslashit( dirname( __FILE__ ) );
 
 			require_once $plugin_dir . 'lib/config.php';
 
-			JsmShowPostMetaConfig::set_constants( __FILE__ );
+			JsmSpmConfig::set_constants( __FILE__ );
 
-			JsmShowPostMetaConfig::require_libs( __FILE__ );
+			JsmSpmConfig::require_libs( __FILE__ );
 
 			add_action( 'init', array( $this, 'init_textdomain' ) );
-
 			add_action( 'init', array( $this, 'init_objects' ) );
 		}
 
@@ -73,10 +69,10 @@ if ( ! class_exists( 'JsmShowPostMeta' ) ) {
 
 		public function init_objects() {
 
-			new JsmShowPostMetaPost();
-			new JsmShowPostMetaScript();
+			new JsmSpmPost();
+			new JsmSpmScript();
 		}
 	}
 
-	JsmShowPostMeta::get_instance();
+	JsmSpm::get_instance();
 }

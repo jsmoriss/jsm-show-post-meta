@@ -1,21 +1,27 @@
 
-var isSavingMetaBoxes = wp.data.select( 'core/edit-post' ).isSavingMetaBoxes;
-var jsmspmWasSavingMb = false;
+var jsmspmBlockAdmin = ( function(){
 
-wp.data.subscribe( function(){
+	var isSavingMetaBoxes = wp.data.select( 'core/edit-post' ).isSavingMetaBoxes;
+	var wasSavingMb       = false;
+	var pluginId          = 'jsmspm';
+	var adminPageL10n     = 'jsmspmAdminPageL10n';
 
-	var jsmspmIsSavingMb = isSavingMetaBoxes();
+	return {
+		refreshPostbox: function(){						// Called by wp.data.subscribe().
 
-	if ( jsmspmWasSavingMb ) {	// Last check was saving post meta.
+			var isSavingMb = isSavingMetaBoxes();				// Check if we're saving metaboxes.
 
-		if ( ! jsmspmIsSavingMb ) {	// Saving the post meta is done.
+			if ( wasSavingMb ) {						// Last check was saving metaboxes.
 
-			var pluginId      = 'jsmspm';
-			var adminPageL10n = 'jsmspmAdminPageL10n';
+				if ( ! isSavingMb ) {					// Saving metaboxes is done.
 
-			sucomBlockPostbox( pluginId, adminPageL10n );
-		}
+					sucomBlockPostbox( pluginId, adminPageL10n );	// Refresh our metabox(es).
+				}
+			}
+
+			wasSavingMb = isSavingMb;
+		},
 	}
+})();
 
-	jsmspmWasSavingMb = jsmspmIsSavingMb;
-});
+wp.data.subscribe( jsmspmBlockAdmin.refreshPostbox );
