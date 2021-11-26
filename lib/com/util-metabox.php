@@ -46,8 +46,7 @@ if ( ! class_exists( 'SucomUtilMetabox' ) ) {
 				$is_added = isset( $metadata[ $key ] ) ? false : true;
 				$key_esc  = esc_html( $key );
 				$el       = SucomUtil::maybe_unserialize_array( $el );
-				//$el_esc   = esc_html( var_export( $el, true ) );
-				$el_esc   = esc_html( print_r( $el, true ) );
+				$el_esc   = esc_html( var_export( $el, true ) );
 
 				$metabox_html .= $is_added ? '<tr class="added-meta">' : '<tr>';
 				$metabox_html .= '<td class="key-column"><div class="key-cell"><pre>' . $key_esc . '</pre></div></td>';
