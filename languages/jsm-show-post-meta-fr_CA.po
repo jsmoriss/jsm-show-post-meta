@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's Show Post Meta 1.3.0\n"
+"Project-Id-Version: JSM's Show Post Metadata 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-show-post-meta\n"
-"POT-Creation-Date: 2020-10-17 11:28-0700\n"
-"PO-Revision-Date: 2021-06-11 11:48-0700\n"
+"POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-11-26 12:20-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -13,37 +13,29 @@ msgstr ""
 "X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: jsm-show-post-meta.php:95
-msgid "The %1$s plugin requires %2$s version %3$s or newer and has been deactivated."
-msgstr "L'extension %1$s nécessite %2$s version %3$s ou plus récente et a été désactivée."
-
-#: jsm-show-post-meta.php:98
-msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
-msgstr "Veuillez mettre à jour %1$s avant d'essayer de réactiver l'extension %2$s."
-
-#: jsm-show-post-meta.php:123
+#: lib/post.php:47
 msgid "Post Metadata"
-msgstr "Métadata d'article"
+msgstr "Métadonnées d'article"
 
-#: jsm-show-post-meta.php:176
+#: lib/post.php:73
 msgid "Key"
 msgstr "Clé"
 
-#: jsm-show-post-meta.php:178
+#: lib/post.php:74
 msgid "Value"
 msgstr "Valeur"
 
 #. Plugin Name of the plugin/theme
 msgid "JSM's Show Post Metadata"
-msgstr "JSM's Show Post Metadata"
+msgstr "Afficher métadonnées d'article de JSM"
 
 #. Plugin URI of the plugin/theme
 msgid "https://surniaulula.com/extend/plugins/jsm-show-post-meta/"
 msgstr "https://surniaulula.com/extend/plugins/jsm-show-post-meta/"
 
 #. Description of the plugin/theme
-msgid "Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages."
-msgstr "Afficher les clés et valeurs des métas d'article (aka champs personnalisés)  dans un metabox sur les pages d'édition."
+msgid "Show post metadata (aka custom fields) in a metabox when editing posts / pages - a great tool for debugging issues with post metadata."
+msgstr "Afficher les métadonnées d'article dans une métabox lors de l'édition d'articles / pages - un excellent outil pour déboguer les problèmes avec les métadonnées d'articles."
 
 #. Author of the plugin/theme
 msgid "JS Morisset"

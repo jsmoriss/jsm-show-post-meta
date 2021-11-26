@@ -35,8 +35,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Show all post meta (aka custom fields) keys and their unserialized values in "
-"a metabox on post editing pages."
+"Show post metadata (aka custom fields) in a metabox when editing posts / "
+"pages - a great tool for debugging issues with post metadata."
 msgstr ""
 
 #. Author of the plugin/theme

@@ -9,7 +9,7 @@
  * Author URI: https://surniaulula.com/
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Description: Show all post meta (aka custom fields) keys and their unserialized values in a metabox on post editing pages.
+ * Description: Show post metadata (aka custom fields) in a metabox when editing posts / pages - a great tool for debugging issues with post metadata.
  * Requires PHP: 7.2
  * Requires At Least: 5.2
  * Tested Up To: 5.8.2
