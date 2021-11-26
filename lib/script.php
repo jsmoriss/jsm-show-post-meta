@@ -38,7 +38,7 @@ if ( ! class_exists( 'JsmSpmScript' ) ) {
 
 			if ( SucomUtil::is_post_page() ) {
 
-				$src = JSMSPM_URLPATH . 'js/block-editor-admin.min.js';
+				$src = JSMSPM_URLPATH . 'js/jquery-block-editor.min.js';
 
 				/**
 				 * The 'wp-editor' dependency should not be enqueued together with the new widgets block editor.
@@ -46,16 +46,16 @@ if ( ! class_exists( 'JsmSpmScript' ) ) {
 				$deps = array( 'wp-data', 'wp-editor', 'wp-edit-post', 'sucom-admin-page' );
 
 				/**
-				 * The 'jsmspm-block-editor-admin' script, with its 'wp-edit-post' dependency, must be loaded in the
+				 * The 'jsmspm-block-editor' script, with its 'wp-edit-post' dependency, must be loaded in the
 				 * footer to work around a bug in the NextGEN Gallery featured image picker. If the script is
 				 * loaded in the header, with a dependency on 'wp-edit-post', the NextGEN Gallery featured image
 				 * picker does not load.
 				 */
 				$in_footer = true;
 
-				wp_register_script( 'jsmspm-block-editor-admin', $src, $deps, JSMSPM_VERSION, $in_footer );
+				wp_register_script( 'jsmspm-block-editor', $src, $deps, JSMSPM_VERSION, $in_footer );
 
-				wp_enqueue_script( 'jsmspm-block-editor-admin' );
+				wp_enqueue_script( 'jsmspm-block-editor' );
 			}
 		}
 
