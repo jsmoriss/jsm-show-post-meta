@@ -32,13 +32,13 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 				return;
 			}
 
-			$view_cap = apply_filters( 'jsmspm_view_cap', 'manage_options' );
+			$capability = apply_filters( 'jsmspm_add_metabox_capability', 'manage_options', $post_obj );
 
-			if ( ! current_user_can( $view_cap, $post_obj->ID ) ) {
+			if ( ! current_user_can( $capability, $post_obj->ID ) ) {
 
 				return;
 
-			} elseif ( ! apply_filters( 'jsmspm_post_type', true, $post_type ) ) {
+			} elseif ( ! apply_filters( 'jsmspm_add_metabox_post_type', true, $post_type ) ) {
 
 				return;
 			}
