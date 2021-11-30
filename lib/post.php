@@ -70,10 +70,14 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 			$post_meta   = get_post_meta( $post_obj->ID );
 			$skip_keys   = array( '/^_encloseme/' );
 			$metabox_id  = 'jsmspm';
-			$key_title   = __( 'Key', 'jsm-show-post-meta' );
-			$value_title = __( 'Value', 'jsm-show-post-meta' );
+			$admin_l10n  = $cf[ 'plugin' ][ 'jsmspm' ][ 'admin_l10n' ];
 
-			return SucomUtilMetabox::get_table_metadata( $post_meta, $skip_keys, $post_obj, $metabox_id, $key_title, $value_title );
+			$titles = array(
+				'key'   => __( 'Key', 'jsm-show-post-meta' ),
+				'value' => __( 'Value', 'jsm-show-post-meta' ),
+			);
+
+			return SucomUtilMetabox::get_table_metadata( $post_meta, $skip_keys, $post_obj, $post_obj->ID, $metabox_id, $admin_l10n, $titles );
 		}
 
 		public function ajax_get_metabox() {

@@ -79,9 +79,9 @@ if ( ! class_exists( 'JsmSpmScript' ) ) {
 		public function get_admin_page_script_data() {
 
 			return array(
-				'_ajax_nonce'          => wp_create_nonce( JSMSPM_NONCE_NAME ),
+				'_ajax_nonce'   => wp_create_nonce( JSMSPM_NONCE_NAME ),
 				'_ajax_actions' => array(
-					'metabox_postboxes'    => array(
+					'metabox_postboxes' => array(
 						'jsmspm' => 'get_metabox_postbox_id_jsmspm_inside',
 					),
 				),
