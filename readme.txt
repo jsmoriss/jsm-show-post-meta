@@ -85,7 +85,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 **Version 3.0.0-dev.2 (TBD)**
 
 * **New Features**
-	* None.
+	* Added the ability to delete individual post meta.
 * **Improvements**
 	* None.
 * **Bugfixes**
@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.0.0-dev.2 =
 
-(TBD) Updated the `js/com/jquery-admin-page.js` library.
+(TBD) Added the ability to delete individual post meta.
 
 = 2.0.0 =
 
