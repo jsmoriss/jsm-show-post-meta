@@ -19,9 +19,9 @@ Show post metadata (aka custom fields) in a metabox when editing posts / pages -
 
 **The JSM's Show Post Metadata plugin displays post (ie. posts, pages, and custom post types) meta keys (aka custom field names) and their unserialized values in a metabox at the bottom of post editing pages.**
 
-The current user must have the [WordPress 'manage_options' capability](https://wordpress.org/support/article/roles-and-capabilities/#manage_options) (allows access to administration options) to view the Post Metadata metabox, and the 'manage_options' capability to delete individual meta keys.
+The current user must have the [WordPress *manage_options* capability](https://wordpress.org/support/article/roles-and-capabilities/#manage_options) (allows access to administration options) to view the Post Metadata metabox, and the *manage_options* capability to delete individual meta keys.
 
-The default 'manage_options' capability can be modified using the 'jsmspm_show_metabox_capability' and 'jsmspm_delete_meta_capability' filters (see filters.txt in the plugin folder).
+The default *manage_options* capability can be modified using the 'jsmspm_show_metabox_capability' and 'jsmspm_delete_meta_capability' filters (see filters.txt in the plugin folder).
 
 There are no plugin settings - simply *install* and *activate* the plugin.
 
