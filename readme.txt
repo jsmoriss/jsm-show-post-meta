@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-show-post-meta/assets/
-Tags: meta, post meta, inspector, custom fields, debug, tools
+Tags: custom fields, meta, post meta, post types, delete, debug
 Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
@@ -17,13 +17,7 @@ Show post metadata (aka custom fields) in a metabox when editing posts / pages -
 
 == Description ==
 
-**Wondering about the post meta your theme and/or plugins might be creating?**
-
-**Want to find the name of a specific post meta key?**
-
-**Need some help debugging your post meta (aka custom fields)?**
-
-The JSM's Show Post Metadata plugin displays all post meta (aka custom fields) keys and their unserialized values in a metabox at the bottom of post editing pages.
+The JSM's Show Post Metadata plugin displays post (ie. posts, pages, and custom post types) meta keys (aka custom field names) and their unserialized values in a metabox at the bottom of post editing pages. By default, the current user needs to have the 'manage_options' capability to view the Post Metadata metabox, and the 'manage_options' capability to delete individual meta keys. The default 'manage_options' capability can be modified using the 'jsmspm_show_metabox_capability' and 'jsmspm_delete_meta_capability' filters.
 
 There are no plugin settings - simply *install* and *activate* the plugin.
 
@@ -82,7 +76,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-dev.2 (TBD)**
+**Version 3.0.0-b.1 (2021/11/30)**
 
 * **New Features**
 	* Added the ability to delete individual post meta.
@@ -113,9 +107,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.0.0-dev.2 =
+= 3.0.0-b.1 =
 
-(TBD) Added the ability to delete individual post meta.
+(2021/11/30) Added the ability to delete individual post meta.
 
 = 2.0.0 =
 
