@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-show-post-meta/assets/
-Tags: custom fields, meta, post meta, post types, delete, debug
+Tags: custom fields, meta, post meta, post types, delete, debug, inspector
 Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
