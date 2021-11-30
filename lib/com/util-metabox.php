@@ -21,9 +21,11 @@ if ( ! class_exists( 'SucomUtilMetabox' ) ) {
 
 		public static function get_table_metadata( array $metadata, array $skip_keys, $obj, $obj_id, $metabox_id, $admin_l10n, array $titles ) {
 
-			$metabox_id  = SucomUtil::sanitize_hookname( $metabox_id );	// Just in case.
-			$md_filtered = apply_filters( $metabox_id . '_metabox_table_metadata', $metadata, $obj );
-			$skip_keys   = apply_filters( $metabox_id . '_metabox_table_skip_keys', $skip_keys, $obj );
+			$metabox_id   = sanitize_key( $metabox_id );	// Just in case.
+			$md_filtered  = apply_filters( $metabox_id . '_metabox_table_metadata', $metadata, $obj );
+			$skip_keys    = apply_filters( $metabox_id . '_metabox_table_skip_keys', $skip_keys, $obj );
+			$del_meta_cap = apply_filters( $metabox_id . '_delete_meta_capability', 'manage_options', $obj );
+			$can_del_meta = current_user_can( $del_meta_cap, $obj_id );
 
 			$metabox_html = self::get_table_metadata_css( $metabox_id );
 			$metabox_html .= '<table>';
@@ -52,13 +54,15 @@ if ( ! class_exists( 'SucomUtilMetabox' ) ) {
 
 				$row_count++;
 
-				$is_added   = isset( $metadata[ $key ] ) ? false : true;
-				$key_esc    = esc_html( $key );
-				$value      = SucomUtil::maybe_unserialize_array( $value );
-				$value_esc  = esc_html( var_export( $value, true ) );
-				$onclick_js = 'sucomDeleteMeta( \'' . $metabox_id . '\', \'' . $obj_id . '\', \'' . $key . '\', \'' . $admin_l10n . '\' );';
+				$is_added     = isset( $metadata[ $key ] ) ? false : true;
+				$key          = sanitize_key( $key );	// Just in case.
+				$key_esc      = esc_html( $key );
+				$value        = SucomUtil::maybe_unserialize_array( $value );
+				$value_esc    = esc_html( var_export( $value, true ) );
+				$table_row_id = sanitize_key( $metabox_id . '-' . $obj_id . '-' . $key );
+				$onclick_js   = 'sucomDeleteMeta( \'' . $metabox_id . '\', \'' . $obj_id . '\', \'' . $key . '\', \'' . $admin_l10n . '\' );';
 
-				$metabox_html .= $is_added ? '<tr class="added-meta">' : '<tr>';
+				$metabox_html .= $is_added ? '<tr class="added-meta">' : '<tr id="' . $table_row_id . '">'; 
 				$metabox_html .= '<td class="del-column">';
 				$metabox_html .= $is_added ? '' : '<span class="dashicons dashicons-table-row-delete" onclick="' . $onclick_js . '"></span>';
 				$metabox_html .= '</td>';

@@ -74,6 +74,8 @@ if ( ! class_exists( 'JsmSpmScript' ) ) {
 				$deps = array( 'jquery' ), '20211130-01', $in_footer = true );
 
 			wp_localize_script( 'sucom-admin-page', $admin_l10n, $this->get_admin_page_script_data() );
+
+			wp_enqueue_script( 'sucom-admin-page' );
 		}
 
 		public function get_admin_page_script_data() {
@@ -81,10 +83,12 @@ if ( ! class_exists( 'JsmSpmScript' ) ) {
 			return array(
 				'_ajax_nonce'   => wp_create_nonce( JSMSPM_NONCE_NAME ),
 				'_ajax_actions' => array(
-					'metabox_postboxes' => array(
+					'delete_jsmspm_meta' => 'delete_jsmspm_meta',
+					'metabox_postboxes'  => array(
 						'jsmspm' => 'get_metabox_postbox_id_jsmspm_inside',
 					),
 				),
+				'_del_failed_transl' => __( 'Unable to delete meta key \'{1}\' for post ID {0}.', 'jsm-show-post-meta' ),
 			);
 		}
 	}

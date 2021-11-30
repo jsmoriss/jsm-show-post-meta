@@ -378,7 +378,7 @@ function sucomToolbarValidators( pluginId, adminPageL10n ) {
 	} );
 }
 
-function sucomDeleteMeta( metaType, metaId, metaKey, adminPageL10n ) {
+function sucomDeleteMeta( metaType, objId, metaKey, adminPageL10n ) {
 
 	var cfg = window[ adminPageL10n ];
 
@@ -399,13 +399,24 @@ function sucomDeleteMeta( metaType, metaId, metaKey, adminPageL10n ) {
 
 	var ajaxData = {
 		action: cfg[ '_ajax_actions' ][ delActionKey ],
-		meta_id: metaId,
+		obj_id: objId,
 		meta_key: metaKey,
 		_ajax_nonce: cfg[ '_ajax_nonce' ],
 	}
 
-	//jQuery.post( ajaxurl, ajaxData, function() {
-	//} );
+	jQuery.post( ajaxurl, ajaxData, function( hide_container_id ) {
+
+		if ( hide_container_id ) {
+
+			jQuery( '#' + hide_container_id ).hide();
+
+		} else if ( cfg[ '_del_failed_transl' ] ) {
+
+			var failed_msg = cfg[ '_del_failed_transl' ].formatUnicorn( objId, metaKey );
+
+			alert( failed_msg );
+		}
+	} );
 }
 
 function sucomCopyById( cssId, adminPageL10n ) {

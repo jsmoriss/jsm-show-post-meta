@@ -13,16 +13,20 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: lib/post.php:47
+#: lib/post.php:49
 msgid "Post Metadata"
 msgstr ""
 
-#: lib/post.php:76
+#: lib/post.php:79
 msgid "Key"
 msgstr ""
 
-#: lib/post.php:77
+#: lib/post.php:80
 msgid "Value"
+msgstr ""
+
+#: lib/script.php:91
+msgid "Unable to delete meta key '{1}' for post ID {0}."
 msgstr ""
 
 #. Plugin Name of the plugin/theme

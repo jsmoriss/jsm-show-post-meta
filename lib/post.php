@@ -23,6 +23,7 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 
 			add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 1000, 2 );
 			add_action( 'wp_ajax_get_metabox_postbox_id_jsmspm_inside', array( $this, 'ajax_get_metabox' ) );
+			add_action( 'wp_ajax_delete_jsmspm_meta', array( $this, 'ajax_delete_meta' ) );
 		}
 
 		public function add_meta_boxes( $post_type, $post_obj ) {
@@ -32,13 +33,14 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 				return;
 			}
 
-			$capability = apply_filters( 'jsmspm_add_metabox_capability', 'manage_options', $post_obj );
+			$show_meta_cap = apply_filters( 'jsmspm_show_metabox_capability', 'manage_options', $post_obj );
+			$can_show_meta = current_user_can( $show_meta_cap, $post_obj->ID );
 
-			if ( ! current_user_can( $capability, $post_obj->ID ) ) {
+			if ( ! $can_show_meta ) {
 
 				return;
 
-			} elseif ( ! apply_filters( 'jsmspm_add_metabox_post_type', true, $post_type ) ) {
+			} elseif ( ! apply_filters( 'jsmspm_show_metabox_post_type', true, $post_type ) ) {
 
 				return;
 			}
@@ -66,7 +68,8 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 
 				return;
 			}
-
+			
+			$cf          = JsmSpmConfig::get_config();
 			$post_meta   = get_post_meta( $post_obj->ID );
 			$skip_keys   = array( '/^_encloseme/' );
 			$metabox_id  = 'jsmspm';
@@ -93,7 +96,7 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 				die( -1 );
 			}
 
-			check_ajax_referer( JSMSPM_NONCE_NAME, '_ajax_nonce', true );
+			check_ajax_referer( JSMSPM_NONCE_NAME, '_ajax_nonce', $die = true );
 
 			if ( empty( $_POST[ 'post_id' ] ) ) {
 
@@ -120,6 +123,43 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 			$metabox_html = $this->get_metabox( $post_obj );
 
 			die( $metabox_html );
+		}
+
+		public function ajax_delete_meta() {
+
+			$doing_ajax = SucomUtilWP::doing_ajax();
+
+			if ( ! $doing_ajax ) {	// Just in case.
+
+				return;
+			}
+
+			check_ajax_referer( JSMSPM_NONCE_NAME, '_ajax_nonce', $die = true );
+
+			if ( empty( $_POST[ 'obj_id' ] ) || empty( $_POST[ 'meta_key' ] ) ) {
+
+				die( -1 );
+			}
+	
+			$metabox_id   = 'jsmspm';
+			$obj_id       = sanitize_key( $_POST[ 'obj_id' ] );
+			$meta_key     = sanitize_key( $_POST[ 'meta_key' ] );
+			$post_obj     = get_post( $obj_id );
+			$del_meta_cap = apply_filters( 'jsmspm_delete_meta_capability', 'manage_options', $post_obj );
+			$can_del_meta = current_user_can( $del_meta_cap, $obj_id );
+			$hide_row_id  = $metabox_id . '-' . $obj_id . '-' . $meta_key;
+
+			if ( ! $can_del_meta ) {
+
+				die( -1 );
+			}
+
+			if ( delete_post_meta( $obj_id, $meta_key ) ) {
+
+				die( $hide_row_id );
+			}
+
+			die( false );	// Show delete failed message.
 		}
 	}
 }
