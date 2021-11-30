@@ -82,7 +82,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-dev.2 (2021/11/30)**
+**Version 3.0.0-dev.2 (TBD)**
 
 * **New Features**
 	* None.
@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.0.0-dev.2 =
 
-(2021/11/30) Updated the `js/com/jquery-admin-page.js` library.
+(TBD) Updated the `js/com/jquery-admin-page.js` library.
 
 = 2.0.0 =
 
