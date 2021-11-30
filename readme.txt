@@ -17,7 +17,9 @@ Show post metadata (aka custom fields) in a metabox when editing posts / pages -
 
 == Description ==
 
-The JSM's Show Post Metadata plugin displays post (ie. posts, pages, and custom post types) meta keys (aka custom field names) and their unserialized values in a metabox at the bottom of post editing pages. By default, the current user needs to have the 'manage_options' capability to view the Post Metadata metabox, and the 'manage_options' capability to delete individual meta keys. The default 'manage_options' capability can be modified using the 'jsmspm_show_metabox_capability' and 'jsmspm_delete_meta_capability' filters.
+The JSM's Show Post Metadata plugin displays post (ie. posts, pages, and custom post types) meta keys (aka custom field names) and their unserialized values in a metabox at the bottom of post editing pages.
+
+By default, the current user needs to have the 'manage_options' capability to view the Post Metadata metabox, and the 'manage_options' capability to delete individual meta keys. The default 'manage_options' capability can be modified using the 'jsmspm_show_metabox_capability' and 'jsmspm_delete_meta_capability' filters (see filters.txt in the plugin folder).
 
 There are no plugin settings - simply *install* and *activate* the plugin.
 
@@ -76,7 +78,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-b.1 (2021/11/30)**
+**Version 3.0.0-rc.1 (2021/11/30)**
 
 * **New Features**
 	* Added the ability to delete individual post meta.
@@ -107,7 +109,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.0.0-b.1 =
+= 3.0.0-rc.1 =
 
 (2021/11/30) Added the ability to delete individual post meta.
 
