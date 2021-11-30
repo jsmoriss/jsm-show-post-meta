@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 5.8.2
-Stable Tag: 2.0.0
+Stable Tag: 2.0.1-dev.2
 
 Show post metadata (aka custom fields) in a metabox when editing posts / pages - a great tool for debugging issues with post metadata.
 
@@ -82,6 +82,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 2.0.1-dev.2 (2021/11/30)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Updated the `js/com/jquery-admin-page.js` library.
+	* Updated the `JsmSpmScript->get_admin_page_script_data()` method to add an '_ajax_actions' array.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+
 **Version 2.0.0 (2021/11/26)**
 
 * **New Features**
@@ -97,6 +112,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.2.
 
 == Upgrade Notice ==
+
+= 2.0.1-dev.2 =
+
+(2021/11/30) Updated the `js/com/jquery-admin-page.js` library.
 
 = 2.0.0 =
 

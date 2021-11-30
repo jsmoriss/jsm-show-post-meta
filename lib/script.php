@@ -80,7 +80,11 @@ if ( ! class_exists( 'JsmSpmScript' ) ) {
 
 			return array(
 				'_ajax_nonce'          => wp_create_nonce( JSMSPM_NONCE_NAME ),
-				'_metabox_postbox_ids' => array( 'jsmspm' ),
+				'_ajax_actions' => array(
+					'metabox_postboxes'    => array(
+						'jsmspm' => 'get_metabox_postbox_id_jsmspm_inside',
+					),
+				),
 			);
 		}
 	}

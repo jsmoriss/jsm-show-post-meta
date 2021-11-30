@@ -17,7 +17,7 @@ if ( ! class_exists( 'JsmSpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'jsmspm' => array(			// Plugin acronym.
-					'version'     => '2.0.0',	// Plugin version.
+					'version'     => '2.0.1-dev.2',	// Plugin version.
 					'slug'        => 'jsm-show-post-meta',
 					'base'        => 'jsm-show-post-meta/jsm-show-post-meta.php',
 					'text_domain' => 'jsm-show-post-meta',
