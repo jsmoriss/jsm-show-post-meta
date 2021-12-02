@@ -1,10 +1,11 @@
 
-var jsmspmBlockEditor = ( function(){
+const jsmspmBlockEditor = ( function(){
 
-	var isSavingMetaBoxes = wp.data.select( 'core/edit-post' ).isSavingMetaBoxes;
-	var wasSavingMb       = false;
-	var pluginId          = 'jsmspm';
-	var adminPageL10n     = 'jsmspmAdminPageL10n';
+	const pluginId          = 'jsmspm';
+	const adminPageL10n     = 'jsmspmAdminPageL10n';
+	const isSavingMetaBoxes = wp.data.select( 'core/edit-post' ).isSavingMetaBoxes;
+
+	var wasSavingMb = false;
 
 	return {
 
