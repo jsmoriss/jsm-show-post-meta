@@ -7,6 +7,7 @@ var jsmspmBlockEditor = ( function(){
 	var adminPageL10n     = 'jsmspmAdminPageL10n';
 
 	return {
+
 		refreshPostbox: function(){					// Called by wp.data.subscribe().
 
 			var isSavingMb = isSavingMetaBoxes();			// Check if we're saving metaboxes.
