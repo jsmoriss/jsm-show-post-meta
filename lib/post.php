@@ -68,7 +68,7 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 
 				return;
 			}
-			
+
 			$cf          = JsmSpmConfig::get_config();
 			$post_meta   = get_post_meta( $post_obj->ID );
 			$skip_keys   = array( '/^_encloseme/' );
@@ -140,7 +140,7 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 
 				die( -1 );
 			}
-	
+
 			$metabox_id   = 'jsmspm';
 			$obj_id       = sanitize_key( $_POST[ 'obj_id' ] );
 			$meta_key     = sanitize_key( $_POST[ 'meta_key' ] );
