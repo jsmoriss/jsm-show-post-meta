@@ -9,11 +9,11 @@ const jsmspmBlockEditor = ( function(){
 
 	return {
 
-		refreshPostbox: function(){					// Called by wp.data.subscribe().
+		refreshPostbox: function(){	// Called by wp.data.subscribe().
 
-			var isSavingMb = isSavingMetaBoxes();			// Check if we're saving metaboxes.
+			var isSavingMb = isSavingMetaBoxes();	// Check if we're saving metaboxes.
 
-			if ( wasSavingMb && ! isSavingMb ) {			// Check if done saving metaboxes.
+			if ( wasSavingMb && ! isSavingMb ) {	// Check if done saving metaboxes.
 
 				sucomBlockPostbox( pluginId, adminPageL10n );	// Refresh our metabox(es).
 			}
