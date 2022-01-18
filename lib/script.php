@@ -27,7 +27,7 @@ if ( ! class_exists( 'JsmSpmScript' ) ) {
 
 				if ( is_admin() ) {
 
-					add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
+					add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ), 1000 );
 
 					add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 				}
