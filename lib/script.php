@@ -40,12 +40,12 @@ if ( ! class_exists( 'JsmSpmScript' ) ) {
 
 				$src = JSMSPM_URLPATH . 'js/jquery-block-editor.min.js';
 
-				/**
+				/*
 				 * The 'wp-editor' dependency should not be enqueued together with the new widgets block editor.
 				 */
 				$deps = array( 'wp-data', 'wp-editor', 'wp-edit-post', 'sucom-admin-page' );
 
-				/**
+				/*
 				 * The 'jsmspm-block-editor' script, with its 'wp-edit-post' dependency, must be loaded in the
 				 * footer to work around a bug in the NextGEN Gallery featured image picker. If the script is
 				 * loaded in the header, with a dependency on 'wp-edit-post', the NextGEN Gallery featured image
