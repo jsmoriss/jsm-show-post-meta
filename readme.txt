@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.5
 Tested Up To: 6.2.0
-Stable Tag: 3.0.11
+Stable Tag: 3.0.12
 
 Show post metadata (aka custom fields) in a metabox when editing posts / pages - a great tool for debugging issues with post metadata.
 
