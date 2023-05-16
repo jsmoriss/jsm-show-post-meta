@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: JSM's Show Post Metadata
+ * Plugin Name: JSM Show Post Metadata
  * Text Domain: jsm-show-post-meta
  * Domain Path: /languages
  * Plugin URI: https://surniaulula.com/extend/plugins/jsm-show-post-meta/

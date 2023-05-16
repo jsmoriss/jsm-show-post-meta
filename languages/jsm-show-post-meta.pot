@@ -1,8 +1,8 @@
-# Copyright (C) 2023 JSM's Show Post Metadata
-# This file is distributed under the same license as the JSM's Show Post Metadata package.
+# Copyright (C) 2023 JSM Show Post Metadata
+# This file is distributed under the same license as the JSM Show Post Metadata package.
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's Show Post Metadata 3.0.12\n"
+"Project-Id-Version: JSM Show Post Metadata 3.0.12\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-show-post-"
 "meta\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -30,7 +30,7 @@ msgid "Unable to delete meta key '{1}' for post ID {0}."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "JSM's Show Post Metadata"
+msgid "JSM Show Post Metadata"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
