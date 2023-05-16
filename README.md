@@ -1,7 +1,7 @@
-<h1>JSM&#039;s Show Post Metadata</h1>
+<h1>JSM Show Post Metadata</h1>
 
 <table>
-<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Show Post Metadata</td></tr>
+<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM Show Post Metadata</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Show post metadata (aka custom fields) in a metabox when editing posts / pages - a great tool for debugging issues with post metadata.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>3.0.12</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2.5 or newer</td></tr>
@@ -14,7 +14,7 @@
 
 <h2>Description</h2>
 
-<p><strong>The JSM's Show Post Metadata plugin displays post (ie. posts, pages, and custom post types) meta keys (aka custom field names) and their unserialized values in a metabox at the bottom of post editing pages.</strong></p>
+<p><strong>The JSM Show Post Metadata plugin displays post (ie. posts, pages, and custom post types) meta keys (aka custom field names) and their unserialized values in a metabox at the bottom of post editing pages.</strong></p>
 
 <p>The current user must have the <a href="https://wordpress.org/support/article/roles-and-capabilities/#manage_options">WordPress <em>manage_options</em> capability</a> (allows access to administration options) to view the Post Metadata metabox, and the <em>manage_options</em> capability to delete individual meta keys.</p>
 
@@ -25,9 +25,9 @@
 <h4>Related Plugins</h4>
 
 <ul>
-<li><a href="https://wordpress.org/plugins/jsm-show-comment-meta/">JSM's Show Comment Metadata</a></li>
-<li><a href="https://wordpress.org/plugins/jsm-show-term-meta/">JSM's Show Term Metadata</a></li>
-<li><a href="https://wordpress.org/plugins/jsm-show-user-meta/">JSM's Show User Metadata</a></li>
-<li><a href="https://wordpress.org/plugins/jsm-show-registered-shortcodes/">JSM's Show Registered Shortcodes</a></li>
+<li><a href="https://wordpress.org/plugins/jsm-show-comment-meta/">JSM Show Comment Metadata</a></li>
+<li><a href="https://wordpress.org/plugins/jsm-show-term-meta/">JSM Show Term Metadata</a></li>
+<li><a href="https://wordpress.org/plugins/jsm-show-user-meta/">JSM Show User Metadata</a></li>
+<li><a href="https://wordpress.org/plugins/jsm-show-registered-shortcodes/">JSM Show Registered Shortcodes</a></li>
 </ul>
 
