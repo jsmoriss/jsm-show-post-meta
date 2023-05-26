@@ -25,7 +25,7 @@ msgstr ""
 msgid "Value"
 msgstr ""
 
-#: lib/script.php:91
+#: lib/script.php:92
 msgid "Unable to delete meta key '{1}' for post ID {0}."
 msgstr ""
 
