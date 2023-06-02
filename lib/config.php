@@ -17,7 +17,7 @@ if ( ! class_exists( 'JsmSpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'jsmspm' => array(			// Plugin acronym.
-					'version'     => '3.0.13',	// Plugin version.
+					'version'     => '3.0.14',	// Plugin version.
 					'slug'        => 'jsm-show-post-meta',
 					'base'        => 'jsm-show-post-meta/jsm-show-post-meta.php',
 					'text_domain' => 'jsm-show-post-meta',
@@ -66,7 +66,7 @@ if ( ! class_exists( 'JsmSpmConfig' ) ) {
 		 * Load all essential library files.
 		 *
 		 * Avoid calling is_admin() here as it can be unreliable this early in the load process - some plugins that operate
-		 * outside of the standard WordPress load process do not define WP_ADMIN as they should (which is required to by
+		 * outside of the standard WordPress load process do not define WP_ADMIN as they should (which is required by
 		 * is_admin() this early in the WordPress load process).
 		 */
 		public static function require_libs( $plugin_file ) {
