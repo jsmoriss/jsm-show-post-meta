@@ -3,6 +3,7 @@ const jsmspmBlockEditor = ( function(){
 
 	const pluginId          = 'jsmspm';
 	const adminPageL10n     = 'jsmspmAdminPageL10n';
+	const postId            = wp.data.select( 'core/editor' ).getCurrentPostId;
 	const isSavingMetaBoxes = wp.data.select( 'core/edit-post' ).isSavingMetaBoxes;
 
 	var wasSavingMb = false;
@@ -15,7 +16,7 @@ const jsmspmBlockEditor = ( function(){
 
 			if ( wasSavingMb && ! isSavingMb ) {	// Check if done saving metaboxes.
 
-				sucomBlockPostbox( pluginId, adminPageL10n );	// Refresh our metabox(es).
+				sucomEditorPostbox( pluginId, adminPageL10n, postId );	// Refresh our metabox(es).
 			}
 
 			wasSavingMb = isSavingMb;
