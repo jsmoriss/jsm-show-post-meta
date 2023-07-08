@@ -70,7 +70,7 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 			}
 
 			$cf          = JsmSpmConfig::get_config();
-			$post_meta   = get_post_meta( $post_obj->ID );
+			$post_meta   = get_metadata( 'post', $post_obj->ID );
 			$skip_keys   = array( '/^_encloseme/' );
 			$metabox_id  = 'jsmspm';
 			$admin_l10n  = $cf[ 'plugin' ][ 'jsmspm' ][ 'admin_l10n' ];
@@ -158,7 +158,7 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 				die( -1 );
 			}
 
-			if ( delete_post_meta( $obj_id, $meta_key ) ) {
+			if ( delete_metadata( 'post', $obj_id, $meta_key ) ) {
 
 				die( $table_row_id );
 			}
