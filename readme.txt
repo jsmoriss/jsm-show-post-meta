@@ -10,7 +10,7 @@ Tags: custom fields, meta, post meta, post types, delete, debug, inspector
 Contributors: jsmoriss
 Requires PHP: 7.2.34
 Requires At Least: 5.5
-Tested Up To: 6.3.0
+Tested Up To: 6.3.1
 Stable Tag: 3.1.1
 
 Show post metadata (aka custom fields) in a metabox when editing posts / pages - a great tool for debugging issues with post metadata.
