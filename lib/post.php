@@ -54,7 +54,8 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 				'__block_editor_compatible_meta_box' => true,
 			);
 
-			add_meta_box( $metabox_id, $metabox_title, array( $this, 'show_metabox' ), $metabox_screen, $metabox_context, $metabox_prio, $callback_args );
+			add_meta_box( $metabox_id, $metabox_title, array( $this, 'show_metabox' ),
+				$metabox_screen, $metabox_context, $metabox_prio, $callback_args );
 		}
 
 		public function show_metabox( $post_obj ) {
