@@ -28,13 +28,14 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 
 		public function add_meta_boxes( $post_type, $post_obj ) {
 
-			if ( ! isset( $post_obj->ID ) ) {	// Exclude links.
+			if ( ! empty( $post_obj->ID ) ) {
 
-				return;
-			}
+				$post_id = $post_obj->ID;
+
+			} else return;
 
 			$show_meta_cap = apply_filters( 'jsmspm_show_metabox_capability', 'manage_options', $post_obj );
-			$can_show_meta = current_user_can( $show_meta_cap, $post_obj->ID );
+			$can_show_meta = current_user_can( $show_meta_cap, $post_id );
 
 			if ( ! $can_show_meta ) {
 
@@ -65,13 +66,14 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 
 		public function get_metabox( $post_obj ) {
 
-			if ( empty( $post_obj->ID ) ) {
+			if ( ! empty( $post_obj->ID ) ) {
 
-				return;
-			}
+				$post_id = $post_obj->ID;
+
+			} else return;
 
 			$cf          = JsmSpmConfig::get_config();
-			$post_meta   = get_metadata( 'post', $post_obj->ID );
+			$post_meta   = get_metadata( 'post', $post_id );
 			$skip_keys   = array( '/^_encloseme/' );
 			$metabox_id  = 'jsmspm';
 			$admin_l10n  = $cf[ 'plugin' ][ 'jsmspm' ][ 'admin_l10n' ];
@@ -81,7 +83,7 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 				'value' => __( 'Value', 'jsm-show-post-meta' ),
 			);
 
-			return SucomUtilMetabox::get_table_metadata( $post_meta, $skip_keys, $post_obj, $post_obj->ID, $metabox_id, $admin_l10n, $titles );
+			return SucomUtilMetabox::get_table_metadata( $post_meta, $skip_keys, $post_obj, $post_id, $metabox_id, $admin_l10n, $titles );
 		}
 
 		public function ajax_get_metabox() {
