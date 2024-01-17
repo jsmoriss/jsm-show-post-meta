@@ -36,7 +36,7 @@ if ( ! class_exists( 'JsmSpmScript' ) ) {
 
 		public function enqueue_block_editor_assets() {
 
-			if ( SucomUtil::is_post_page() ) {
+			if ( SucomUtilWP::is_post_page() ) {
 
 				$src = JSMSPM_URLPATH . 'js/jquery-block-editor.min.js';
 

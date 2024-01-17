@@ -107,8 +107,7 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 			}
 
 			$post_id = $_POST[ 'post_id' ];
-
-			$post_obj = SucomUtil::get_post_object( $post_id );
+			$post_obj = SucomUtilWP::get_post_object( $post_id );
 
 			if ( ! is_object( $post_obj ) ) {
 
@@ -159,9 +158,8 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 			if ( ! $can_del_meta ) {
 
 				die( -1 );
-			}
 
-			if ( delete_metadata( 'post', $obj_id, $meta_key ) ) {
+			} elseif ( delete_metadata( 'post', $obj_id, $meta_key ) ) {
 
 				die( $table_row_id );
 			}
