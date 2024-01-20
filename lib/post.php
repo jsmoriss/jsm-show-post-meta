@@ -26,18 +26,18 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 			add_action( 'wp_ajax_delete_jsmspm_meta', array( $this, 'ajax_delete_meta' ) );
 		}
 
-		public function add_meta_boxes( $post_type, $post_obj ) {
+		public function add_meta_boxes( $post_type, $obj ) {
 
-			if ( ! empty( $post_obj->ID ) ) {
+			if ( empty( $obj->ID ) ) {
 
-				$post_id = $post_obj->ID;
+				return;
+			}
 
-			} else return;
+			$post_id  = $obj->ID;
+			$show_cap = apply_filters( 'jsmspm_show_metabox_capability', 'manage_options', $obj );
+			$can_show = current_user_can( $show_cap, $post_id, $obj );
 
-			$show_meta_cap = apply_filters( 'jsmspm_show_metabox_capability', 'manage_options', $post_obj );
-			$can_show_meta = current_user_can( $show_meta_cap, $post_id );
-
-			if ( ! $can_show_meta ) {
+			if ( ! $can_show ) {
 
 				return;
 
@@ -59,31 +59,31 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 				$metabox_screen, $metabox_context, $metabox_prio, $callback_args );
 		}
 
-		public function show_metabox( $post_obj ) {
+		public function show_metabox( WP_Post $obj ) {
 
-			echo $this->get_metabox( $post_obj );
+			echo $this->get_metabox( $obj );
 		}
 
-		public function get_metabox( $post_obj ) {
+		public function get_metabox( WP_Post $obj ) {
 
-			if ( ! empty( $post_obj->ID ) ) {
+			if ( ! empty( $obj->ID ) ) {
 
-				$post_id = $post_obj->ID;
+				$post_id = $obj->ID;
 
 			} else return;
 
-			$cf          = JsmSpmConfig::get_config();
-			$post_meta   = get_metadata( 'post', $post_id );
-			$skip_keys   = array( '/^_encloseme/' );
-			$metabox_id  = 'jsmspm';
-			$admin_l10n  = $cf[ 'plugin' ][ 'jsmspm' ][ 'admin_l10n' ];
+			$cf         = JsmSpmConfig::get_config();
+			$metadata   = get_metadata( 'post', $post_id );
+			$skip_keys  = array();
+			$metabox_id = 'jsmspm';
+			$admin_l10n = $cf[ 'plugin' ][ 'jsmspm' ][ 'admin_l10n' ];
 
 			$titles = array(
 				'key'   => __( 'Key', 'jsm-show-post-meta' ),
 				'value' => __( 'Value', 'jsm-show-post-meta' ),
 			);
 
-			return SucomUtilMetabox::get_table_metadata( $post_meta, $skip_keys, $post_obj, $post_id, $metabox_id, $admin_l10n, $titles );
+			return SucomUtilMetabox::get_table_metadata( $metadata, $skip_keys, $obj, $post_id, $metabox_id, $admin_l10n, $titles );
 		}
 
 		public function ajax_get_metabox() {
@@ -107,22 +107,22 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 			}
 
 			$post_id = $_POST[ 'post_id' ];
-			$post_obj = SucomUtilWP::get_post_object( $post_id );
+			$obj = SucomUtilWP::get_post_object( $post_id );
 
-			if ( ! is_object( $post_obj ) ) {
-
-				die( -1 );
-
-			} elseif ( empty( $post_obj->post_type ) ) {
+			if ( ! is_object( $obj ) ) {
 
 				die( -1 );
 
-			} elseif ( empty( $post_obj->post_status ) ) {
+			} elseif ( empty( $obj->post_type ) ) {
+
+				die( -1 );
+
+			} elseif ( empty( $obj->post_status ) ) {
 
 				die( -1 );
 			}
 
-			$metabox_html = $this->get_metabox( $post_obj );
+			$metabox_html = $this->get_metabox( $obj );
 
 			die( $metabox_html );
 		}
@@ -148,14 +148,14 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 			 * so that jQuery can hide the table row after a successful delete.
 			 */
 			$metabox_id   = 'jsmspm';
-			$obj_id       = sanitize_key( $_POST[ 'obj_id' ] );
-			$meta_key     = sanitize_key( $_POST[ 'meta_key' ] );
-			$table_row_id = sanitize_key( $metabox_id . '_' . $obj_id . '_' . $meta_key );
+			$obj_id       = SucomUtil::sanitize_int( $_POST[ 'obj_id' ] );
+			$meta_key     = SucomUtil::sanitize_meta_key( $_POST[ 'meta_key' ] );
+			$table_row_id = SucomUtil::sanitize_key( $metabox_id . '_' . $obj_id . '_' . $meta_key );
 			$post_obj     = get_post( $obj_id );
-			$del_meta_cap = apply_filters( 'jsmspm_delete_meta_capability', 'manage_options', $post_obj );
-			$can_del_meta = current_user_can( $del_meta_cap, $obj_id );
+			$delete_cap   = apply_filters( 'jsmspm_delete_meta_capability', 'manage_options', $post_obj );
+			$can_delete   = current_user_can( $delete_cap, $obj_id, $post_obj );
 
-			if ( ! $can_del_meta ) {
+			if ( ! $can_delete ) {
 
 				die( -1 );
 
