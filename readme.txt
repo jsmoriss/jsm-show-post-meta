@@ -29,7 +29,7 @@ Filter the post meta shown in the metabox:
 
 Array of regular expressions to exclude meta keys:
 
-<pre><code>'jsmspm_metabox_table_skip_keys' ( array $skip_keys, $post_obj )</code></pre>
+<pre><code>'jsmspm_metabox_table_exclude_keys' ( array $exclude_keys, $post_obj )</code></pre>
 
 Capability required to show post meta:
 
