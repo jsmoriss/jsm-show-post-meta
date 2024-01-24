@@ -1,7 +1,7 @@
 
 'jsmspm_metabox_table_metadata' ( array $metadata, $post_obj )		// Filter the post meta shown in the metabox.
 
-'jsmspm_metabox_table_skip_keys' ( array $skip_keys, $post_obj )	// Array of regular expressions to exclude meta keys.
+'jsmspm_metabox_table_exclude_keys' ( array $exclude_keys, $post_obj )	// Array of regular expressions to exclude meta keys.
 
 'jsmspm_show_metabox_capability' ( 'manage_options', $post_obj )	// Capability required to show post meta.
 

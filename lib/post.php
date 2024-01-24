@@ -72,18 +72,18 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 
 			} else return;
 
-			$cf         = JsmSpmConfig::get_config();
-			$metadata   = get_metadata( 'post', $post_id );
-			$skip_keys  = array();
-			$metabox_id = 'jsmspm';
-			$admin_l10n = $cf[ 'plugin' ][ 'jsmspm' ][ 'admin_l10n' ];
+			$cf           = JsmSpmConfig::get_config();
+			$metadata     = get_metadata( 'post', $post_id );
+			$exclude_keys = array();
+			$metabox_id   = 'jsmspm';
+			$admin_l10n   = $cf[ 'plugin' ][ 'jsmspm' ][ 'admin_l10n' ];
 
 			$titles = array(
 				'key'   => __( 'Key', 'jsm-show-post-meta' ),
 				'value' => __( 'Value', 'jsm-show-post-meta' ),
 			);
 
-			return SucomUtilMetabox::get_table_metadata( $metadata, $skip_keys, $obj, $post_id, $metabox_id, $admin_l10n, $titles );
+			return SucomUtilMetabox::get_table_metadata( $metadata, $exclude_keys, $obj, $post_id, $metabox_id, $admin_l10n, $titles );
 		}
 
 		public function ajax_get_metabox() {
