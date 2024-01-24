@@ -21,7 +21,7 @@ The JSM Show Post Metadata plugin displays post (ie. posts, pages, and custom po
 
 There are no plugin settings - simply install and activate the plugin.
 
-= Available Filters =
+= Available Filters for Developers =
 
 Filter the post meta shown in the metabox:
 
