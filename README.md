@@ -1,57 +1,120 @@
-<h1>JSM Show Post Metadata</h1>
+<!DOCTYPE html>
+<html dir='ltr'>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width">
+			<title>Maintenance</title>
+	<style type="text/css">
+		html {
+			background: #f1f1f1;
+		}
+		body {
+			background: #fff;
+			border: 1px solid #ccd0d4;
+			color: #444;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+			margin: 2em auto;
+			padding: 1em 2em;
+			max-width: 700px;
+			-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+			box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+		}
+		h1 {
+			border-bottom: 1px solid #dadada;
+			clear: both;
+			color: #666;
+			font-size: 24px;
+			margin: 30px 0 0 0;
+			padding: 0;
+			padding-bottom: 7px;
+		}
+		#error-page {
+			margin-top: 50px;
+		}
+		#error-page p,
+		#error-page .wp-die-message {
+			font-size: 14px;
+			line-height: 1.5;
+			margin: 25px 0 20px;
+		}
+		#error-page code {
+			font-family: Consolas, Monaco, monospace;
+		}
+		ul li {
+			margin-bottom: 10px;
+			font-size: 14px ;
+		}
+		a {
+			color: #0073aa;
+		}
+		a:hover,
+		a:active {
+			color: #006799;
+		}
+		a:focus {
+			color: #124964;
+			-webkit-box-shadow:
+				0 0 0 1px #5b9dd9,
+				0 0 2px 1px rgba(30, 140, 190, 0.8);
+			box-shadow:
+				0 0 0 1px #5b9dd9,
+				0 0 2px 1px rgba(30, 140, 190, 0.8);
+			outline: none;
+		}
+		.button {
+			background: #f3f5f6;
+			border: 1px solid #016087;
+			color: #016087;
+			display: inline-block;
+			text-decoration: none;
+			font-size: 13px;
+			line-height: 2;
+			height: 28px;
+			margin: 0;
+			padding: 0 10px 1px;
+			cursor: pointer;
+			-webkit-border-radius: 3px;
+			-webkit-appearance: none;
+			border-radius: 3px;
+			white-space: nowrap;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing:    border-box;
+			box-sizing:         border-box;
 
-<table>
-<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM Show Post Metadata</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Show post metadata (aka custom fields) in a metabox when editing posts / pages - a great tool for debugging issues with post metadata.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>4.2.0</td></tr>
-<tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2.34 or newer</td></tr>
-<tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.8 or newer</td></tr>
-<tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>6.5.0</td></tr>
-<tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
-<tr><th align="right" valign="top" nowrap>License</th><td><a href="https://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
-<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>posts, custom fields, meta, metadata, post types, delete, debug, inspector</td></tr>
-</table>
+			vertical-align: top;
+		}
 
-<h2>Description</h2>
+		.button.button-large {
+			line-height: 2.30769231;
+			min-height: 32px;
+			padding: 0 12px;
+		}
 
-<p>The JSM Show Post Metadata plugin displays post (ie. posts, pages, and custom post types) meta keys (aka custom field names) and their unserialized values in a metabox at the bottom of the post editing page.</p>
+		.button:hover,
+		.button:focus {
+			background: #f1f1f1;
+		}
 
-<p>There are no plugin settings - simply install and activate the plugin.</p>
+		.button:focus {
+			background: #f3f5f6;
+			border-color: #007cba;
+			-webkit-box-shadow: 0 0 0 1px #007cba;
+			box-shadow: 0 0 0 1px #007cba;
+			color: #016087;
+			outline: 2px solid transparent;
+			outline-offset: 0;
+		}
 
-<h4>Available Filters for Developers</h4>
+		.button:active {
+			background: #f3f5f6;
+			border-color: #7e8993;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
 
-<p>Filter the post meta shown in the metabox:</p>
-
-<pre><code>'jsmspm_metabox_table_metadata' ( array $metadata, $post_obj )</code></pre>
-
-<p>Array of regular expressions to exclude meta keys:</p>
-
-<pre><code>'jsmspm_metabox_table_exclude_keys' ( array $exclude_keys, $post_obj )</code></pre>
-
-<p>Capability required to show post meta:</p>
-
-<pre><code>'jsmspm_show_metabox_capability' ( 'manage_options', $post_obj )</code></pre>
-
-<p>Show post meta for a post type (defaults to true):</p>
-
-<pre><code>'jsmspm_show_metabox_post_type' ( true, $post_type )</code></pre>
-
-<p>Capability required to delete post meta:</p>
-
-<pre><code>'jsmspm_delete_meta_capability' ( 'manage_options', $post_obj )</code></pre>
-
-<p>Icon for the delete post meta button:</p>
-
-<pre><code>'jsmspm_delete_meta_icon_class' ( 'dashicons dashicons-table-row-delete' )</code></pre>
-
-<h4>Related Plugins</h4>
-
-<ul>
-<li><a href="https://wordpress.org/plugins/jsm-show-comment-meta/">JSM Show Comment Metadata</a></li>
-<li><a href="https://github.com/jsmoriss/jsm-show-order-meta/">JSM Show Order Metadata for WooCommerce</a></li>
-<li><a href="https://wordpress.org/plugins/jsm-show-post-meta/">JSM Show Post Metadata</a></li>
-<li><a href="https://wordpress.org/plugins/jsm-show-term-meta/">JSM Show Term Metadata</a></li>
-<li><a href="https://wordpress.org/plugins/jsm-show-user-meta/">JSM Show User Metadata</a></li>
-<li><a href="https://wordpress.org/plugins/jsm-show-registered-shortcodes/">JSM Show Registered Shortcodes</a></li>
-</ul>
-
+			</style>
+</head>
+<body id="error-page">
+	<div class="wp-die-message">Briefly unavailable for scheduled maintenance. Check back in a minute.</div></body>
+</html>
+	
