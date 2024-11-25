@@ -82,7 +82,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.6.0 (2024/08/29)**
+**Version 4.6.1-dev.1 (2024/11/25)**
 
 * **New Features**
 	* None.
@@ -91,6 +91,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
+	* Added a check for `current_user_can()` in `JsmSpmPost->ajax_get_metabox()`.
 	* Updated the `SucomUtil` and `SucomUtilWP` classes.
 * **Requires At Least**
 	* PHP v7.4.33.
@@ -98,7 +99,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.6.0 =
+= 4.6.1-dev.1 =
 
-(2024/08/29) Updated the `SucomUtil` and `SucomUtilWP` classes.
+(2024/11/25) Added a check for `current_user_can()` in `JsmSpmPost->ajax_get_metabox()`.
 
