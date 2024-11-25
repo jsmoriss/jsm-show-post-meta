@@ -107,6 +107,7 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 			}
 
 			$post_id = $_POST[ 'post_id' ];
+
 			$obj = SucomUtilWP::get_post_object( $post_id );
 
 			if ( ! is_object( $obj ) ) {
@@ -118,6 +119,14 @@ if ( ! class_exists( 'JsmSpmPost' ) ) {
 				die( -1 );
 
 			} elseif ( empty( $obj->post_status ) ) {
+
+				die( -1 );
+			}
+
+			$show_cap = apply_filters( 'jsmspm_show_metabox_capability', 'manage_options', $obj );
+			$can_show = current_user_can( $show_cap, $post_id, $obj );
+
+			if ( ! $can_show ) {
 
 				die( -1 );
 			}
