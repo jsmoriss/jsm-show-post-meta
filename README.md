@@ -3,7 +3,7 @@
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM Show Post Metadata</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Show post metadata (aka custom fields) in a metabox when editing posts / pages - a great tool for debugging issues with post metadata.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>4.6.1</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>4.6.2</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.4.33 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.9 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>6.7.1</td></tr>
