@@ -19,6 +19,8 @@ Show post metadata (aka custom fields) in a metabox when editing posts / pages -
 
 The JSM Show Post Metadata plugin displays post (ie. posts, pages, and custom post types) meta keys (aka custom field names) and their unserialized values in a metabox at the bottom of the post editing page.
 
+Note that if you're using WooCommerce HPOS (High-Performance Order Storage), available since WooCommerce v8.2, then your WooCommerce orders are NOT post objects and you should use the [JSM Show Order Metadata](https://wordpress.org/plugins/jsm-show-order-meta/) plugin instead.
+
 There are no plugin settings - simply install and activate the plugin.
 
 = Available Filters for Developers =
